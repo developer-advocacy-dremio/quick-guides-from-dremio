@@ -1,6 +1,6 @@
 ## Using Iceberg Tables with Tableau
 
-The easiest way to use your Iceberg tables with Tableau is using Dremio. The high level steps are.
+You can view Iceberg tables in Tableau using Dremio. The high level steps are.
 - Connect your Iceberg Catalog to Dremio
 - Connect Tableau to Dremio
 
@@ -23,3 +23,13 @@ Guide to Starting a Dremio Cloud Account:
 [Docs of Supported Catalogs in Dremio Cloud](https://docs.dremio.com/cloud/supported-data-formats/iceberg/)
 
 If using Azure, Hive, or Google Cloud then deploy Dremio Community Edition.
+
+- [Deploying Dremio CE to Azure](https://docs.dremio.com/software/deployment/azure/azure-quickstart/)
+
+## Connecting Dremio to Tableau
+
+Dremio can connect to Tableau at the click of a button, watch the video below for a demonstration:
+
+- [Video: Connecting Dremio to Tableau](https://www.youtube.com/watch?v=VJP4IG8Ng98)
+
+[Docs on Connecting Dremio to Tableau](https://docs.dremio.com/software/client-applications/tableau/)
