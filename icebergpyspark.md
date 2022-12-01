@@ -178,8 +178,13 @@ spark.sql("CREATE TABLE mycatalog.table1 AS (SELECT * FROM myview)")
 
 ## Run an upsert again view
 spark.sql("""
-
-
+MERGE INTO mycatalog.table1 t
+    USING (SELECT * FROM myview) s
+    ON t.id = s.id
+    WHEN MATCHED AND s.op = 'delete' THEN DELETE
+    WHEN MATCHED AND t.count IS NULL AND s.op = 'increment' THEN UPDATE SET t.count = 0
+    WHEN MATCHED AND s.op = 'increment' THEN UPDATE SET t.count = t.count + 1
+    WHEN NOT MATCHED THEN INSERT *
 """)
 
 ```
