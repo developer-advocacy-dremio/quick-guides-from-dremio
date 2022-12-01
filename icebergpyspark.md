@@ -1,5 +1,5 @@
 - [Configuring Spark Iceberg Catalog](#configuring-your-catalog-in-pyspark)
-- [Writing to Iceberg from a File]([#writing-to-an-iceberg-table-from-a-file))
+- [Writing to Iceberg from a File]([#writing-to-an-iceberg-table-from-a-file)
 
 ## Configuring your Catalog in pySpark
 
