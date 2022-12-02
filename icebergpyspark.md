@@ -7,6 +7,12 @@ Below are several examples of configuring your catalog in pySpark depending whic
 
 [Article on Spark Configuration for Iceberg](https://dev.to/alexmercedcoder/configuring-apache-spark-for-apache-iceberg-2d41)
 
+For all the examples below you can remove the following if using a single node vs a spark cluster:
+
+```
+.setMaster(SPARK_MASTER)
+```
+
 #### Project Nessie/Dremio Arctic
 ```py
 import pyspark
