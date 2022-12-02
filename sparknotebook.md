@@ -2,7 +2,17 @@
 
 The purpose of this guide is to be able to run Spark Locally in a docker container and be able to write notebooks that use Spark from that container. Having docker installed is required.
 
-## Starting the Container
+## Shorter Way (if you just need quick access to a notebook with spark)
+
+run the following command
+```
+docker run -p 8888:8888 --name spark-notebook alexmerced/spark33-notebook
+```
+A url should appear in the output, put that in your browser and your ready to go!
+
+## Longer Way (in case you need access to container shell)
+
+### Starting the Container
 
 Run the command
 
