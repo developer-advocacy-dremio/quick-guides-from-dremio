@@ -34,14 +34,10 @@ Now you have a notebook environment that should work
 
 ## Example of Using Iceberg to Write to the Local Container
 
-In the example below we'll have a notebook where we run some queries to the local container. To see other pySpark examples of configuring the iceberg catalog for different catalogs checkout [this section of this repository on Iceberg/Python](https://github.com/developer-advocacy-dremio/quick-guides-from-dremio/blob/main/icebergpyspark.md).
+In the example below we'll have a notebook where we run some queries writing to the local containers file system. To see other pySpark examples of configuring the iceberg catalog for different catalogs and storage contexts checkout [this section of this repository on Iceberg/Python](https://github.com/developer-advocacy-dremio/quick-guides-from-dremio/blob/main/icebergpyspark.md).
 
 ```py
 import os
-import sys
-
-## Install pySpark
-!{sys.executable} -m pip install pyspark
 
 ## import pyspark
 import pyspark
@@ -57,7 +53,7 @@ conf = (
   		#Configuring Catalog
         .set('spark.sql.catalog.iceberg', 'org.apache.iceberg.spark.SparkCatalog')
         .set('spark.sql.catalog.iceberg.type', 'hadoop')
-        .set('spark.sql.catalog.iceberg.warehouse', '$PWD/iceberg-warehouse')
+        .set('spark.sql.catalog.iceberg.warehouse', 'iceberg-warehouse')
 )
 
 ## Start Spark Session
