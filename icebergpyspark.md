@@ -10,6 +10,7 @@ Below are several examples of configuring your catalog in pySpark depending whic
 #### Project Nessie/Dremio Arctic
 ```py
 import pyspark
+from pyspark.sql import SparkSession
 import os
 
 ## DEFINE SENSITIVE VARIABLES
@@ -53,6 +54,7 @@ spark.sql("SELECT * FROM arctic.table1;")
 
 ```py
 import pyspark
+from pyspark.sql import SparkSession
 import os
 
 ## DEFINE SENSITIVE VARIABLES
@@ -90,6 +92,7 @@ spark.sql("SELECT * FROM glue.table1;")
 
 ```py
 import pyspark
+from pyspark.sql import SparkSession
 import os
 
 ## DEFINE SENSITIVE VARIABLES
@@ -127,6 +130,7 @@ spark.sql("SELECT * FROM hdfs_catalog.table1;")
 
 ```py
 import pyspark
+from pyspark.sql import SparkSession
 import os
 
 ## DEFINE SENSITIVE VARIABLES
@@ -166,6 +170,7 @@ spark.sql("SELECT * FROM hive.table1;")
 
 ```py
 import pyspark
+from pyspark.sql import SparkSession
 import os
 
 ## DEFINE SENSITIVE VARIABLES
@@ -212,6 +217,7 @@ In this example it would be a Nessie/Arctic catalog under the namespace `arctic`
 
 ```py
 import pyspark
+from pyspark.sql import SparkSession
 import os
 
 ## DEFINE SENSITIVE VARIABLES
