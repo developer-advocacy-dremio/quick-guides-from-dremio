@@ -7,3 +7,4 @@ Quick Guides from Dremio on Several topics
 - [Iceberg & Tableau](./icebergtableau.md)
 - [Iceberg & pySpark Example](./icebergpyspark.md)
 - [Iceberg & Dremio Example Queries](./icebergdremio.md)
+- [Creating a Local Spark/Notebook Environment](./sparknotebook.md)
