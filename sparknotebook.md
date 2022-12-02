@@ -21,7 +21,7 @@ This command does the following
 Once you are in the Docker containers shell we need to install jupyter notebook.
 
 ```
-pip install notebook
+pip install notebook pyspark
 ```
 
 The normal command `jupyter-notebook` won't work so we'll have to use the binary directly and pass it a flag to host the server on `0.0.0.0` so it is accessible outside of the container.
