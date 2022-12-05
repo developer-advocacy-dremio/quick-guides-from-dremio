@@ -217,6 +217,50 @@ print("Spark Running")
 spark.sql("SELECT * FROM dbcatalog.table1;")
 ```
 
+## DynamoDB
+
+```py
+import pyspark
+from pyspark.sql import SparkSession
+import os
+
+## DEFINE SENSITIVE VARIABLES
+AWS_ACCESS_KEY = os.environ.get("AWS_ACCESS_KEY") ## AWS CREDENTIALS
+AWS_SECRET_KEY = os.environ.get("AWS_SECRET_KEY") ## AWS CREDENTIALS
+
+
+conf = (
+    pyspark.SparkConf()
+        .setAppName('app_name')
+        .setMaster(SPARK_MASTER)
+  		#packages
+        .set('spark.jars.packages', 'org.apache.iceberg:iceberg-spark-runtime-3.3_2.12:1.0.0,software.amazon.awssdk:bundle:2.17.178,software.amazon.awssdk:url-connection-client:2.17.178')
+  		#SQL Extensions
+        .set('spark.sql.extensions', 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions')
+  		#Configuring Catalog
+        .set('spark.sql.catalog.dynamo', 'org.apache.iceberg.spark.SparkCatalog')
+        .set('spark.sql.catalog.dynamo.catalog-impl', 'org.apache.iceberg.aws.dynamodb.DynamoDbCatalog')
+        .set('spark.sql.catalog.dynamo.warehouse', 's3a://my-bucket/path/')
+        .set('spark.sql.catalog.dynamo.io-impl', 'org.apache.iceberg.aws.s3.S3FileIO')
+  		#AWS CREDENTIALS
+        .set('spark.hadoop.fs.s3a.access.key', AWS_ACCESS_KEY)
+        .set('spark.hadoop.fs.s3a.secret.key', AWS_SECRET_KEY)
+)
+
+## Start Spark Session
+spark = SparkSession.builder.config(conf=conf).getOrCreate()
+print("Spark Running")
+
+## Run a Query
+spark.sql("SELECT * FROM dynamo.table1;")
+```
+
+* This by default creates dynamodb table called `iceberg` for storing catalog entries. If you want to use a different table [set the table-name property](https://iceberg.apache.org/docs/latest/aws/#dynamodb-catalog).
+
+```
+.set('spark.sql.catalog.dynamo.dynamodb.table-name', 'some-other-table-name')
+```
+
 #### Iceberg and Delta Lake in the same Spark session
 
 In this example it would be a Nessie/Arctic catalog under the namespace `arctic` and delta lake configured to use the internal spark catalog under the namespace `default`.
