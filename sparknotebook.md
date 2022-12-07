@@ -42,6 +42,10 @@ Once you are in the Docker containers shell we need to install jupyter notebook.
 pip install notebook pyspark
 ```
 
+Regarding environmental variables they can either be defined the following ways:
+- at container start up using the following flag `docker run --env KEY=VALUE --env KEY2=VALUE2 image/name`
+- Or from shell before starting the notebook `export VARIABLE=VALUE`
+
 The normal command `jupyter-notebook` won't work so we'll have to use the binary directly and pass it a flag to host the server on `0.0.0.0` so it is accessible outside of the container.
 
 ```
