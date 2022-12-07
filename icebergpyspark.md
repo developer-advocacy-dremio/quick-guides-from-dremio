@@ -53,7 +53,7 @@ spark = SparkSession.builder.config(conf=conf).getOrCreate()
 print("Spark Running")
 
 ## Run a Query
-spark.sql("SELECT * FROM arctic.table1;")
+spark.sql("SELECT * FROM arctic.table1;").show()
 ```
 
 #### AWS Glue
@@ -91,7 +91,7 @@ spark = SparkSession.builder.config(conf=conf).getOrCreate()
 print("Spark Running")
 
 ## Run a Query
-spark.sql("SELECT * FROM glue.table1;")
+spark.sql("SELECT * FROM glue.table1;").show()
 ```
 
 #### HDFS
@@ -129,7 +129,7 @@ spark = SparkSession.builder.config(conf=conf).getOrCreate()
 print("Spark Running")
 
 ## Run a Query
-spark.sql("SELECT * FROM hdfs_catalog.table1;")
+spark.sql("SELECT * FROM hdfs_catalog.table1;").show()
 ```
 
 #### HIVE
@@ -169,7 +169,7 @@ spark = SparkSession.builder.config(conf=conf).getOrCreate()
 print("Spark Running")
 
 ## Run a Query
-spark.sql("SELECT * FROM hive.table1;")
+spark.sql("SELECT * FROM hive.table1;").show()
 ```
 
 #### JDBC
@@ -214,7 +214,7 @@ spark = SparkSession.builder.config(conf=conf).getOrCreate()
 print("Spark Running")
 
 ## Run a Query
-spark.sql("SELECT * FROM dbcatalog.table1;")
+spark.sql("SELECT * FROM dbcatalog.table1;").show()
 ```
 
 ## DynamoDB
@@ -252,7 +252,7 @@ spark = SparkSession.builder.config(conf=conf).getOrCreate()
 print("Spark Running")
 
 ## Run a Query
-spark.sql("SELECT * FROM dynamo.table1;")
+spark.sql("SELECT * FROM dynamo.table1;").show()
 ```
 
 * This by default creates dynamodb table called `iceberg` for storing catalog entries. If you want to use a different table [set the table-name property](https://iceberg.apache.org/docs/latest/aws/#dynamodb-catalog).
