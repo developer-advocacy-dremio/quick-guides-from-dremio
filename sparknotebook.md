@@ -16,6 +16,8 @@ if using AWS you may want to define some environmental variables when starting t
 docker run -p 8888:8888 --env AWS_REGION=us-east-1 --env AWS_ACCESS_KEY_ID=XXXXXXXXXXXXXXX --env AWS_SECRET_ACCESS_KEY=xxxxxxx --name spark-notebook alexmerced/spark33-notebook
 ```
 
+_Also define AWS_DEFAULT_REGION if you plan on using pyIceberg as it will use this variable for AWS region_
+
 A url should appear in the output, put that in your browser and your ready to go!
 
 ## Longer Way (in case you need access to container shell)
