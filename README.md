@@ -9,3 +9,4 @@ Quick Guides from Dremio on Several topics
 - [Iceberg & Dremio Example Queries](./icebergdremio.md)
 - [Creating a Local Spark/Notebook Environment](./sparknotebook.md)
 - [Python ODBC and Arrow connecto to Dremio examples](./pythonodbcarrow.md)
+- [Creating a Local Dremio/Spark/Minio Environment for Experimentation](./.md)
