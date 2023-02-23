@@ -13,7 +13,7 @@ In this exercise we will connect to a Dremio Arctic catalog using Apache Spark l
 - AWS Region, Access Key and Secret Key 
 - Dremio Cloud Personal Access Token (get these from account settings, bottom left corner)
 - S3 Address of where you want to write to (this can be any location your AWS Account is able to write to)
-- Arctic Catalog URI (in the project settings)
+- Arctic Catalog URI (in the project settings for the particular Arctic catalog you want to connect to)
 
 ## Step 1 - Startup a Docker Container with Spark & Jupyter Notebook
 
