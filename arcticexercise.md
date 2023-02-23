@@ -36,6 +36,8 @@ Once this is opened in the browser create a new notebook and add the following:
 import pyspark
 from pyspark.sql import SparkSession
 import os
+import matplotlib.pyplot as plt
+import pandas as pd
 
 # Install a pip package in the current Jupyter kernel
 import sys
@@ -75,5 +77,55 @@ spark = SparkSession.builder.config(conf=conf).getOrCreate()
 print("Spark Running")
 
 ## Run a Query
-spark.sql("CREATE TABLE arctic.notebook.feb23.example1 (id INT, name STRING)").show()
+spark.sql("CREATE TABLE arctic.notebook.example (id INT, x INT, y INT)").show()
+```
+
+## Adding data to the table we created
+
+```py
+spark.sql("INSERT INTO arctic.notebook.example VALUES (1, 1, 2), (2, 2, 3), (3, 3, 2), (4, 4, 4), (5, 5, 6)").show()
+spark.sql("SELECT * FROM arctic.notebook.example").show()
+```
+
+## Creating a Branch to Isolate Experimentation
+
+#### Plot the Data Before Experimentation
+
+```py
+df = spark.sql("SELECT * FROM arctic.notebook.example")
+data = df.select('x','y').sample(False, 0.8).toPandas()
+plt.plot(data.x,data.y)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Chart of Data on Production/Main Branch')
+plt.show()
+```
+
+### Create Branch and Run Experiements
+
+```py
+spark.sql("CREATE BRANCH IF NOT EXISTS example IN arctic")
+spark.sql("USE REFERENCE example IN arctic")
+spark.sql("INSERT INTO arctic.notebook.example VALUES (6, 1, 1), (7, 7, 9), (8, 2, 3), (9, 3, 8), (10, 5, 2)").show()
+df = spark.sql("SELECT * FROM arctic.notebook.example")
+data = df.select('x','y').sample(False, 0.8).toPandas()
+plt.plot(data.x,data.y)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Chart of Data on Example Branch')
+plt.show()
+```
+
+### Plot data to show main branch is unaffected
+
+```py
+# This... doesn't look write, lucky, this insert doesn't effect our production branch
+spark.sql("USE REFERENCE main IN arctic")
+df = spark.sql("SELECT * FROM arctic.notebook.example")
+data = df.select('x','y').sample(False, 0.8).toPandas()
+plt.plot(data.x,data.y)
+plt.xlabel('x')
+plt.ylabel('y')
+plt.title('Chart of Data on Production/Main Branch')
+plt.show()
 ```
