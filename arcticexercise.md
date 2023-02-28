@@ -33,15 +33,15 @@ When you run this command, the URL with Jupyter sever token will be in the outpu
 Once this is opened in the browser create a new notebook and add the following:
 
 ```py
+# Install a pip package in the current Jupyter kernel
+import sys
+!{sys.executable} -m pip install pandas matplotlib
+
 import pyspark
 from pyspark.sql import SparkSession
 import os
 import matplotlib.pyplot as plt
 import pandas as pd
-
-# Install a pip package in the current Jupyter kernel
-import sys
-!{sys.executable} -m pip install pandas matplotlib
 
 ## DEFINE SENSITIVE VARIABLES
 ARCTIC_URI = os.environ.get("ARCTIC_URI") ## Nessie Server URI
