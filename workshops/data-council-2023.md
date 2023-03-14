@@ -133,3 +133,19 @@ plt.ylabel('y')
 plt.title('Chart of Data on Production/Main Branch')
 plt.show()
 ```
+
+## Bonus
+
+#### Additional SparkSQL Arctic/Nessie Syntax
+- [SparkSQL Nessie/Arctic Syntax](https://projectnessie.org/tools/sql/)
+
+#### Dremio Sonar Syntax
+This is syntax to be used in the Dremio Sonar engine, the beauty is, it's the same catalog regardless which engine you use. So effects of commands in Dremio will carry over to Spark and vice-versa.
+
+- [Assigning a Branch to a prior commit](https://docs.dremio.com/cloud/sql/commands/alter-branch/)
+- [OPTIMIZING TABLE (Compaction)](https://docs.dremio.com/cloud/sql/commands/optimize-table/)
+
+#### OTHER
+- [Nessie/Arctic with Flink](https://projectnessie.org/tools/iceberg/flink/)
+- [Nessie/Arctic with Hive](https://projectnessie.org/tools/iceberg/hive/)
+- [Nessie/Arctic with Presto](https://prestodb.io/docs/current/connector/iceberg.html)
