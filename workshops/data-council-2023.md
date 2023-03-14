@@ -87,8 +87,8 @@ spark.sql("CREATE TABLE arctic.notebook.example (id INT, x INT, y INT)").show()
 ## Adding data to the table we created
 
 ```py
-spark.sql("INSERT INTO arctic.notebook.example VALUES (1, 1, 2), (2, 2, 3), (3, 3, 2), (4, 4, 4), (5, 5, 6)").show()
-spark.sql("SELECT * FROM arctic.notebook.example").show()
+spark.sql("INSERT INTO arctic.datacouncil.example VALUES (1, 1, 2), (2, 2, 3), (3, 3, 2), (4, 4, 4), (5, 5, 6)").show()
+spark.sql("SELECT * FROM arctic.datacouncil.example").show()
 ```
 
 ## Creating a Branch to Isolate Experimentation
@@ -96,7 +96,7 @@ spark.sql("SELECT * FROM arctic.notebook.example").show()
 #### Plot the Data Before Experimentation
 
 ```py
-df = spark.sql("SELECT * FROM arctic.notebook.example")
+df = spark.sql("SELECT * FROM arctic.datacouncil.example")
 data = df.select('x','y').sample(False, 0.8).toPandas()
 plt.plot(data.x,data.y)
 plt.xlabel('x')
@@ -108,10 +108,10 @@ plt.show()
 ### Create Branch and Run Experiements
 
 ```py
-spark.sql("CREATE BRANCH IF NOT EXISTS example IN arctic")
-spark.sql("USE REFERENCE example IN arctic")
-spark.sql("INSERT INTO arctic.notebook.example VALUES (6, 1, 1), (7, 7, 9), (8, 2, 3), (9, 3, 8), (10, 5, 2)").show()
-df = spark.sql("SELECT * FROM arctic.notebook.example")
+spark.sql("CREATE BRANCH IF NOT EXISTS datacouncilbranch IN arctic")
+spark.sql("USE REFERENCE datacouncilbranch IN arctic")
+spark.sql("INSERT INTO arctic.datacouncil.example VALUES (6, 1, 1), (7, 7, 9), (8, 2, 3), (9, 3, 8), (10, 5, 2)").show()
+df = spark.sql("SELECT * FROM arctic.datacouncil.example")
 data = df.select('x','y').sample(False, 0.8).toPandas()
 plt.plot(data.x,data.y)
 plt.xlabel('x')
@@ -125,7 +125,7 @@ plt.show()
 ```py
 # This... doesn't look write, lucky, this insert doesn't effect our production branch
 spark.sql("USE REFERENCE main IN arctic")
-df = spark.sql("SELECT * FROM arctic.notebook.example")
+df = spark.sql("SELECT * FROM arctic.datacouncil.example")
 data = df.select('x','y').sample(False, 0.8).toPandas()
 plt.plot(data.x,data.y)
 plt.xlabel('x')
