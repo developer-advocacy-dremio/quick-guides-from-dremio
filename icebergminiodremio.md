@@ -43,7 +43,7 @@ networks:
       driver: bridge
 ```
 
-In the same directory create a `.env` file with the following:
+In the same directory create a `.env` file with the following (we'll fill in values as we go):
 
 ```env
 ######################################
