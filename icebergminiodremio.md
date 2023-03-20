@@ -109,7 +109,7 @@ Now your connected to Minio from Dremio which can read and write data to the sto
 
 ## Connect in Notebook
 
-You can use the settings specified in the [pySpark settings section of this repo](./icebergpyspark), just make sure to add the following setting so it points to your minio instance.
+You can use the settings specified in the [pySpark settings section of this repo](./icebergpyspark), just make sure to add the following setting so it points to your minio instance and make sure AWS_ACCESS_KEY and AWS_SECRET_KEY variables in the below scripts use your minio credentials.
 
 ```
 .set('spark.sql.catalog.arctic.s3.endpoint', "http://0.0.0.0:9000")
