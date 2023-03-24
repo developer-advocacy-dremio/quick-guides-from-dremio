@@ -1,6 +1,6 @@
 # Data Council 2023
 
-## Dremio Demo and Getting Started Resources
+Below are links to several resources you may find useful in explorting topics like the Dremio Data Lakehouse, Apache Iceberg and Data as Code.
 
 ## Demo Videos
 
