@@ -31,7 +31,7 @@ Below are links to several resources you may find useful in explorting topics li
 
 ## Highlights from Subsurface Live 2023 [Playlist](https://www.youtube.com/playlist?list=PL-gIUf9e9CCvyZXhtrSOFPNxFh9FkZ8b8)
 
-- [How Insider save 90% on their costs with Apache Iceberg](https://www.youtube.com/watch?v=VpihapR6550&list=PL-gIUf9e9CCvyZXhtrSOFPNxFh9FkZ8b8&index=43)
+- [How Insider saved 90% on their costs with Apache Iceberg](https://www.youtube.com/watch?v=VpihapR6550&list=PL-gIUf9e9CCvyZXhtrSOFPNxFh9FkZ8b8&index=43)
 - [Managing Data Files in Apache Iceberg](https://www.youtube.com/watch?v=4bOCDP-rhuM&list=PL-gIUf9e9CCvyZXhtrSOFPNxFh9FkZ8b8&index=34)
 - [DataOps in Action](https://www.youtube.com/watch?v=UHLu6DXwtuA&list=PL-gIUf9e9CCvyZXhtrSOFPNxFh9FkZ8b8&index=42&t=58s)
 - [CI/CD on the Lakehouse](https://www.youtube.com/watch?v=_29szrOEnSo)
