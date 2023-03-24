@@ -12,7 +12,8 @@ Below are links to several resources you may find useful in explorting topics li
 ## Dremio Resources
 
 - [Try Dremio out with Test Drive](https://www.dremio.com/test-drive)
-- 
+- [Bringing the Semantic Layer to Life](https://www.dremio.com/blog/bringing-the-semantic-layer-to-life/)
+- [What is a Data Lakehouse](https://www.dremio.com/blog/what-is-a-data-lakehouse/)
 
 
 ## Apache Iceberg Resources
