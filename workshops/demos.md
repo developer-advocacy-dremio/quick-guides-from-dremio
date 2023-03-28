@@ -5,6 +5,7 @@ Below are links to several resources you may find useful in explorting topics li
 ## Demo Videos
 
 - [Demo Video from Data Council Booth](https://youtu.be/lO2pQ43HE84)
+- [Data as Code Demo from Alex's Workshop](https://youtu.be/JCpWfsu-liw)
 - [Data as Code Presentation & Demo from Gnarly Data Waves](https://www.youtube.com/watch?v=FzOkbCvyE0I)
 - [Getting Started with Dremio's Lakehouse](https://www.youtube.com/watch?v=XYpNnvR0Vog)
 
@@ -15,12 +16,11 @@ Below are links to several resources you may find useful in explorting topics li
 - [Bringing the Semantic Layer to Life](https://www.dremio.com/blog/bringing-the-semantic-layer-to-life/)
 - [What is a Data Lakehouse](https://www.dremio.com/blog/what-is-a-data-lakehouse/)
 
-
 ## Apache Iceberg Resources
 
 - [Apache Iceberg 101 Article](https://www.dremio.com/blog/apache-iceberg-101-your-guide-to-learning-apache-iceberg-concepts-and-practices/)
 - [Apache Iceberg FAQ Article](https://www.dremio.com/blog/apache-iceberg-faq/)
-
+- [Get a Free Early Release Copy of "Apache Iceberg: The Definitive Guide"](https://www.dremio.com/apache-iceberg-the-definitive-guide)
 
 ## Data as Code Resources
 
