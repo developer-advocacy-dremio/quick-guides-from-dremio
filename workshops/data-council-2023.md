@@ -4,7 +4,8 @@ In this exercise we will connect to a Dremio Arctic catalog using Apache Spark l
 
 #### Dremio Arctic Resources
 
-- [Gnarly Data Waves Episode on Data As Code (Includes Demo)]()
+- [Gnarly Data Waves Episode on Data As Code (Includes Demo)](https://youtu.be/mMda-BMuQUQ)
+- [Data as Code Demo from Alex's Workshop](https://youtu.be/JCpWfsu-liw)
 
 #### Pre-Requisites
 
