@@ -11,3 +11,4 @@ Quick Guides from Dremio on Several topics
 - [Python ODBC and Arrow connecto to Dremio examples](./pythonodbcarrow.md)
 - [Creating a Local Dremio/Spark/Minio Environment for Experimentation](./icebergminiodremio.md)
 - [Dremio Arctic in Spark Notebook](./arcticexercise.md)
+- [Creating a Local Environment with Nessie, Spark, and Notebook](./nessie-notebook.md)
