@@ -43,7 +43,7 @@ conf = (
     pyspark.SparkConf()
         .setAppName('app_name')
   		#packages
-        .set('spark.jars.packages', 'org.apache.iceberg:iceberg-spark-runtime-3.3_2.13:1.2.0,org.projectnessie.nessie-integrations:nessie-spark-extensions-3.3_2.13:0.54.0')
+        .set('spark.jars.packages', 'org.apache.iceberg:iceberg-spark-runtime-3.3_2.12:1.2.0,org.projectnessie:nessie-spark-extensions-3.3_2.12:0.54.0')
   		#SQL Extensions
         .set('spark.sql.extensions', 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions,org.projectnessie.spark.extensions.NessieSparkSessionExtensions')
   		#Configuring Catalog
@@ -53,7 +53,6 @@ conf = (
         .set('spark.sql.catalog.nessie.authentication.type', 'NONE')
         .set('spark.sql.catalog.nessie.catalog-impl', 'org.apache.iceberg.nessie.NessieCatalog')
         .set('spark.sql.catalog.nessie.warehouse', WAREHOUSE)
-        .set('spark.sql.catalog.nessie.io-impl', 'org.apache.iceberg.aws.s3.S3FileIO')
 )
 
 ## Start Spark Session
@@ -67,7 +66,7 @@ spark.sql("INSERT INTO nessie.names VALUES ('Alex Merced'), ('Dipankar Mazumdar'
     
 spark.sql("SELECT * FROM nessie.names").show()
     
-spark.sql("CREATE BRANCH IF NOT EXISTS my_branch IN nessie;").show()
+spark.sql("CREATE BRANCH IF NOT EXISTS my_branch IN nessie").show()
     
 spark.sql("USE REFERENcE my_branch IN nessie").show()
     
