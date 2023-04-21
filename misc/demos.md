@@ -1,9 +1,12 @@
 ## Demo Videos
 
-- [Demo Video from Data Council Booth](https://youtu.be/lO2pQ43HE84)
+
 - [Data as Code Demo from Alex's Workshop](https://youtu.be/JCpWfsu-liw)
+- [Demo Video from Data Council 2023 Booth](https://youtu.be/lO2pQ43HE84)
 - [Data as Code Presentation & Demo from Gnarly Data Waves](https://www.youtube.com/watch?v=FzOkbCvyE0I)
 - [Getting Started with Dremio's Lakehouse](https://www.youtube.com/watch?v=XYpNnvR0Vog)
+- [Setting up an Evaluation Environment Locally with Nessie, Spark, Notebook](https://github.com/developer-advocacy-dremio/quick-guides-from-dremio/blob/main/nessie-notebook.md)
+- [Creating a Local Environment for Evaluation with Dremio, Minio & Spark](https://github.com/developer-advocacy-dremio/quick-guides-from-dremio/blob/main/icebergminiodremio.md)
 
 
 ## Dremio Resources
