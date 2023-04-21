@@ -176,7 +176,6 @@ MINIO_ENDPOINT = os.environ.get("AWS_S3_ENDPOINT") ## POINT TO MINIO
 conf = (
     pyspark.SparkConf()
         .setAppName('app_name')
-        .setMaster(SPARK_MASTER)
   		#packages
         .set('spark.jars.packages', 'org.apache.hadoop:hadoop-aws:3.3.4,org.apache.iceberg:iceberg-spark-runtime-3.3_2.12:1.0.0,software.amazon.awssdk:bundle:2.17.178,software.amazon.awssdk:url-connection-client:2.17.178')
   		#SQL Extensions
