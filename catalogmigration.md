@@ -45,3 +45,21 @@ java -jar iceberg-catalog-migrator-cli-0.2.0.jar migrate \
 - `--stacktrace`: captures stack trace in log files
 - `-h, --help`: show help message
 - `-v, --version`: show version number
+
+## SOURCE CATALOG OPTIONS
+- `--source-catalog-type`: Type of catalog [CUSTOM, DYNAMODB, ECS, GLUE, HADOOP, HIVE, JDBC, NESSIE, REST]
+- `--source-catalog-properties=`: properties of catalog (`--source-catalog-properties uri=http://localhost:19120/api/v1,ref=main,warehouse=/tmp/warehouseNessie`)
+- `--source-catalog-hadoop-conf`: Optional Hadoop catalog configurations (`--source-catalog-hadoop-conf key1=value1,key2=value2`)
+- `--source-custom-catalog-impl`: Optional Path to Catalog Implementation (`--source-custom-catalog-impl org.apache.iceberg.AwesomeCatalog`)
+
+
+## TARGET CATALOG OPTIONS
+- `--target-catalog-type`: Type of catalog [CUSTOM, DYNAMODB, ECS, GLUE, HADOOP, HIVE, JDBC, NESSIE, REST]
+- `--target-catalog-properties=`: properties of catalog (`--source-catalog-properties uri=http://localhost:19120/api/v1,ref=main,warehouse=/tmp/warehouseNessie`)
+- `--target-catalog-hadoop-conf`: Optional Hadoop catalog configurations (`--source-catalog-hadoop-conf key1=value1,key2=value2`)
+- `--target-custom-catalog-impl`: Optional Path to Catalog Implementation (`--source-custom-catalog-impl org.apache.iceberg.AwesomeCatalog`)
+
+## IDENTIFIERS (IF NOT SPECIFIED ALL TABLES/IDENTIFIERS ARE MIGRATED)
+- `--identifiers`: List of idenitifiers to migrate (`--identifiers foo.t1,bar.t2`)
+- `--identifiers-from-file`: Path to file with list of identifiers (one per line) (`--identifiers-from-file /tmp/files/ids.txt`)
+- `--identifiers-regex`: Regex Expression to determine what is migrated (`--identifiers-regex ^foo\..*`)
