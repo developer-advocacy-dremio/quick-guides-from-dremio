@@ -13,3 +13,4 @@ Quick Guides from Dremio on Several topics
 - [Dremio Arctic in Spark Notebook](./arcticexercise.md)
 - [Creating a Local Environment with Nessie, Spark, and Notebook](./nessie-notebook.md)
 - [Apache Iceberg Catalog Migration](./catalogmigration.md)
+- [Spark Catalog Configuration Spark Scripts](./bashscript.md)
