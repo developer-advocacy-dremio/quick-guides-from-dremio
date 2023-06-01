@@ -21,7 +21,8 @@ Here you'll find articles on migrating to Apache Iceberg, or migrating between c
 
 - [How to Migrate to an Apache Iceberg Table](https://www.dremio.com/subsurface/how-to-migrate-a-hive-table-to-an-iceberg-table/)
 - [Hands-On Exercise: Apache Iceberg Migration](https://www.dremio.com/subsurface/migrating-a-hive-table-to-an-iceberg-table-hands-on-tutorial/)
-- []()
+- [3 Ways to Convert a Delta Lake Table to Apache Iceberg](https://www.dremio.com/blog/3-ways-to-convert-a-delta-lake-table-into-an-apache-iceberg-table/)
+- [Apache Iceberg Catalog Migration Tool](https://www.dremio.com/blog/introducing-the-apache-iceberg-catalog-migration-tool/)
 - [Video: Migrating from Delta Lake to Iceberg](https://www.youtube.com/watch?v=11p3AaPduos&pp=ygUYRHJlbWlvIEljZWJlcmcgTWlncmF0aW9u)
 - [Video: Iceberg Catalog Migration Tool](https://www.youtube.com/watch?v=9hxCDyr6YSs&pp=ygUNRHJlbWlvIE5lc3NpZQ%3D%3D)
 
@@ -29,5 +30,7 @@ Here you'll find articles on migrating to Apache Iceberg, or migrating between c
 - [Data-as-Code Demo (Dremio/Arctic/Nessie)](https://youtu.be/JCpWfsu-liw)
 - [What is Project Nessie & how to start a Nessie Server](https://www.youtube.com/watch?v=xsQ_uMBbDXI)
 - [Create a Data Lakehouse with Apache Iceberg, Project Nessie and Apache Spark](https://www.youtube.com/watch?v=Q3qb93fuQAA)
-- []()
-- []()
+- [Automatic Table Optimization with Dremio Arctic](https://www.youtube.com/watch?v=N4NfvYeuwsY&pp=ygUORHJlbWlvIEljZWJlcmc%3D)
+
+### Other Useful Articles
+- [3 Ways to use Apache Iceberg in Python](https://www.dremio.com/blog/3-ways-to-use-python-with-apache-iceberg/)
