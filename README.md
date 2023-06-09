@@ -14,3 +14,4 @@ Quick Guides from Dremio on Several topics
 - [Creating a Local Environment with Nessie, Spark, and Notebook](./nessie-notebook.md)
 - [Apache Iceberg Catalog Migration](./catalogmigration.md)
 - [Spark Catalog Configuration Spark Scripts](./bashscript.md)
+- [Querying Dremio in Other Languages](./languages.md)
