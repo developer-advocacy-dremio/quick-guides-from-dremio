@@ -17,7 +17,5 @@ CREATE TABLE my_iceberg_catalog.names (name STRING) USING iceberg;
 ```
 
 Here are some other tutorials for getting hands on building Apache Iceberg lakehouses:
-- [Ingesting Data into Iceberg with Flink](https://www.dremio.com/blog/using-flink-with-apache-iceberg-and-nessie/
-
-)
+- [Ingesting Data into Iceberg with Flink](https://www.dremio.com/blog/using-flink-with-apache-iceberg-and-nessie/)
 - [Building an Iceberg Lakehouse on your laptop with Spark/Nessie/Flink](https://dev.to/alexmercedcoder/data-engineering-create-a-apache-iceberg-based-data-lakehouse-on-your-laptop-41a8)
