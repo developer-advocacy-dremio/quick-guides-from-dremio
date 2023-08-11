@@ -6,7 +6,7 @@ If just looking to get started just evaluating Apache Iceberg, follow the direct
 # RUN THIS COMMAND TO START DOCKER CONTAINER
 docker run -it --name spark34 alexmerced/spark34
 
-# Once Container is Running, this will start spark-sql with a catalog called "local"
+# Once Container is Running, this will start spark-sql with a catalog called "my_iceberg_catalog"
 spark-sql --packages org.apache.iceberg:iceberg-spark-runtime-3.4_2.13:1.3.1 \
 --conf spark.sql.catalog.my_iceberg_catalog=org.apache.iceberg.spark.SparkCatalog \
 --conf spark.sql.catalog.my_iceberg_catalog.type=hadoop \
