@@ -2,7 +2,7 @@ To query Dremio using the R programming language and the Dremio ODBC driver for 
 
 ## Download and Install the Dremio ODBC Driver:
 
-Depending on your operating system (Windows, Linux, or macOS), download and install the appropriate version of the Dremio ODBC driver from the Dremio ODBC driver download page.
+Depending on your operating system (Windows, Linux, or macOS), download and install the appropriate version of the Dremio ODBC driver from the [Dremio ODBC driver download page](https://docs.dremio.com/cloud/sonar/client-apps/drivers/arrow-flight-sql-odbc/).
 
 Follow the installation instructions provided in the documentation for your specific operating system.
 
