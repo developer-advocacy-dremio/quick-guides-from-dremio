@@ -79,3 +79,47 @@ Close the Connection:
 
 Always remember to close the connection to release resources when you're done with your queries.
 That's it! You've now successfully configured and used the Dremio ODBC driver to connect to Dremio Cloud from R and can execute SQL queries against your Dremio data source.
+
+## Example Code
+
+We will be using the odbc library to connect to Dremio and the dplyr library for data manipulation. Make sure you have these libraries installed in your R environment before running the code.
+
+```R
+# Load the required libraries
+library(odbc)
+library(dplyr)
+
+# Define the DSN name configured in your ODBC driver setup
+dsn_name <- "Arrow Flight SQL ODBC DSN"
+
+# Establish a connection to Dremio
+con <- dbConnect(odbc::odbc(), dsn = dsn_name)
+
+# Define your SQL query
+sql_query <- "SELECT * FROM your_table_name"  # Replace with your table and query
+
+# Execute the SQL query and fetch the results into a dataframe
+df <- dbGetQuery(con, sql_query)
+
+# Close the database connection
+dbDisconnect(con)
+
+# Now you can work with the dataframe 'df'
+# For example, print the first few rows of the dataframe
+head(df)
+```
+In this code:
+
+1. We load the necessary libraries: odbc for database connectivity and dplyr for data manipulation. Make sure to install these libraries if you haven't already.
+
+1. We specify the DSN name that you configured in your ODBC driver setup. Replace "Arrow Flight SQL ODBC DSN" with the actual DSN name you created.
+
+1. We establish a connection to Dremio using dbConnect. The connection is stored in the variable con.
+
+1. You should replace "SELECT * FROM your_table_name" with your specific SQL query. This code executes the query and stores the results in the dataframe df.
+
+1. After fetching the data, we close the database connection using dbDisconnect to release resources.
+
+1. Finally, you can perform various data manipulation and analysis tasks on the df dataframe. In this example, we print the first few rows using head(df).
+
+Make sure to replace "your_table_name" with the actual table name and customize the SQL query as needed for your specific use case.
