@@ -16,4 +16,4 @@ Quick Guides from Dremio on Several topics
 - [Apache Iceberg Catalog Migration](./catalogmigration.md)
 - [Spark Catalog Configuration Spark Scripts](./bashscript.md)
 - [Querying Dremio in Other Languages](./languages.md)
-- [Connecting R Applications to Dremio via ODBC](,/rodbc.md)
+- [Connecting R Applications to Dremio via ODBC](./rodbc.md)
