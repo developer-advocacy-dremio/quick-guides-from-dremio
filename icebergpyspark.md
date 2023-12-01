@@ -157,7 +157,7 @@ conf = (
         .set('spark.sql.extensions', 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions')
   		#Configuring Catalog
         .set('spark.sql.catalog.hive', 'org.apache.iceberg.spark.SparkCatalog')
-        .set('spark.sql.catalog.hive.type', 'hadoop')
+        .set('spark.sql.catalog.hive.type', 'hive')
         .set('spark.sql.catalog.hive.warehouse', 's3a://my-bucket/path/')
         .set('spark.sql.catalog.hive.uri', HIVE_URI)
         .set('spark.sql.catalog.hive.io-impl', 'org.apache.iceberg.aws.s3.S3FileIO')
