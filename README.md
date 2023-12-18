@@ -1,6 +1,8 @@
 # quick-guides-from-dremio
 Quick Guides from Dremio on Several topics
 
+Want to learn more about Dremio? Here is a [great list of resources](./digests/getstarted.md).
+
 
 ## Iceberg
 - [Iceberg 101 Course](https://www.dremio.com/subsurface/apache-iceberg-101-your-guide-to-learning-apache-iceberg-concepts-and-practices/)
