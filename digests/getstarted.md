@@ -25,6 +25,20 @@ This page contains a list of great articles and resources for getting started wi
 - [Video: The Who, What, and Why of Apache Iceberg](https://www.youtube.com/watch?v=p24GiqQaA1U)
 - [Blog: The Why and How of Using Apache Iceberg on Databricks](https://www.dremio.com/blog/the-why-and-how-of-using-apache-iceberg-on-databricks/)
 
+## Dremio Reflections
+- [Video: Materialized Views vs Reflections](https://www.youtube.com/watch?v=Pjk58Z2SHUU)
+- [Reflection Recommendations](https://www.dremio.com/blog/dremio-reflection-recommender/)
+- [Intelligent Reflection Refresh](https://www.dremio.com/blog/intelligent-reflection-refresh/)
+
+## Dremio Features
+- [Scalar UDFs](https://www.dremio.com/blog/announcing-scalar-user-defined-functions/)
+- [Tabular UDFs](https://www.dremio.com/blog/announcing-tabular-user-defined-functions/)
+- [Row & Column Access](https://www.dremio.com/blog/table-driven-access-policies-using-subqueries/)
+- [Semantic Layer](https://www.dremio.com/blog/bringing-the-semantic-layer-to-life/)
+- [Array Functions](https://www.dremio.com/blog/new-array-functions-in-dremio/)
+- [Generative AI Features](https://www.dremio.com/blog/introducing-dremios-new-generative-ai-capabilities/)
+- [Vectorized Paquet V2 Reading](https://www.dremio.com/blog/vectorized-reading-of-parquet-v2-improves-performance-up-to-75/)
+
 ## What is Nessie & Data as Code
 - [Video: Data-as-Code Demo](https://www.youtube.com/watch?v=JCpWfsu-liw)
 - [Video: Catalog Versioning with Nessie](https://www.youtube.com/watch?v=0WY58txcOhA)
@@ -46,5 +60,7 @@ This page contains a list of great articles and resources for getting started wi
 
 ## Data Mesh
 - [Video: Unified Data Access for Data Mesh](https://www.youtube.com/watch?v=lLp8x9I8ufs)
+- [Blog: Why Data Mesh](https://www.dremio.com/blog/from-monolithic-data-architectures-to-data-mesh/)
+
 
 ## Other Great Resources
