@@ -18,4 +18,5 @@ Want to learn more about Dremio? Here is a [great list of resources](./digests/g
 - [Apache Iceberg Catalog Migration](./catalogmigration.md)
 - [Spark Catalog Configuration Spark Scripts](./bashscript.md)
 - [Querying Dremio in Other Languages](./languages.md)
+- [Simple Apache Arrow Flight Client Python Code](./arrowclientpy.md)
 - [Connecting R Applications to Dremio via ODBC](./rodbc.md)
