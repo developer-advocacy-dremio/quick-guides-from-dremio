@@ -134,3 +134,41 @@ WHERE id = 2;
 -- To display this information on our website, we need to convert these arrays into a user-friendly, comma-separated string format.
 -- The ARRAY_TO_STRING function in DremioSQL helps us transform these arrays into a format that's easy for customers to read and understand.
 ```
+
+#### CURRENT_DATE_UTC & DATEDIFF
+
+```sql
+-- Step 1: Creating a table for events with timestamps and timezones
+CREATE TABLE IF NOT EXISTS EventSchedule (
+    id INT,
+    eventName VARCHAR,
+    eventTime TIMESTAMP,
+    timezone VARCHAR
+);
+
+-- Step 2: Inserting records into the table
+-- Imagine we are organizing events in different global locations
+INSERT INTO EventSchedule (id, eventName, eventTime, timezone) VALUES
+(1, 'Global Webinar', '2021-07-01 10:00:00', 'America/New_York'), -- Event in New York
+(2, 'Team Meeting', '2021-07-01 16:00:00', 'Europe/London'),      -- Event in London
+(3, 'Product Launch', '2021-07-01 20:00:00', 'Asia/Tokyo');       -- Event in Tokyo
+
+-- Step 3: Running a query to convert event timestamps to UTC
+-- Additionally, we include the current UTC date and the difference in days between the event date and the current UTC date.
+SELECT id, eventName,
+       CONVERT_TIMEZONE('America/New_York', 'UTC', eventTime) AS eventTimeUTC,
+       CURRENT_DATE_UTC() AS currentDateUTC,
+       DATEDIFF(CURRENT_DATE_UTC(), eventTimeUTC) AS daysUntilEvent
+FROM EventSchedule WHERE timezone = 'America/New_York';
+
+-- In this query:
+-- CONVERT_TIMEZONE is used to standardize event times to UTC.
+-- CURRENT_DATE_UTC() gives us the current date in UTC.
+-- DATEDIFF calculates the difference in days between the current UTC date and the event date in UTC.
+
+-- Story Context:
+-- In an international organization, coordinating events across multiple time zones is a common challenge.
+-- By converting all event times to UTC, we can compare and manage these events more effectively.
+-- The CURRENT_DATE_UTC function helps us understand the current date in a standard time zone, regardless of where our team members are located.
+-- The daysUntilEvent column is particularly useful for planning and logistics, as it tells us how many days are left until each event.
+```
