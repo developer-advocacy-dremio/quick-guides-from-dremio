@@ -205,3 +205,47 @@ WHERE REGEXP_COL_LIKE(genres, 'Rock');
 -- This approach is particularly useful for music enthusiasts and analysts who are interested in exploring albums across overlapping genres.
 -- For example, finding all albums that include 'Rock' in their genres helps identify a wide range of albums that touch upon the Rock genre, regardless of their primary classification.
 ```
+
+
+#### RANK & DENSE_RANK
+
+```sql
+-- Step 1: Creating a table to store sales records
+CREATE TABLE SalesData (
+    id INT,
+    salesPerson VARCHAR,
+    totalSales INT
+);
+
+-- Step 2: Inserting records into the table
+INSERT INTO SalesData (id, salesPerson, totalSales) VALUES
+(1, 'Alice', 300),
+(2, 'Bob', 300),
+(3, 'Charlie', 200),
+(4, 'Diana', 400),
+(5, 'Eve', 200),
+(6, 'Frank', 500);
+
+-- Step 3: Using the RANK function
+-- The RANK function assigns a unique rank to each row within a partition of a result set, with gaps in rank values for ties
+SELECT salesPerson, totalSales,
+       RANK() OVER (ORDER BY totalSales DESC) AS salesRank
+FROM SalesData;
+
+-- In this query, sales persons are ranked based on their total sales.
+-- If two sales persons have the same total sales, they will receive the same rank, and the next rank will be incremented by the number of tied ranks.
+
+-- Step 4: Using the DENSE_RANK function
+-- DENSE_RANK also assigns a unique rank to each row within a partition, but without gaps in rank values for ties
+SELECT salesPerson, totalSales,
+       DENSE_RANK() OVER (ORDER BY totalSales DESC) AS denseSalesRank
+FROM SalesData;
+
+-- Similar to RANK, sales persons are ranked based on their total sales.
+-- However, with DENSE_RANK, if there are ties, the next rank after the tie will be the immediately following integer, without skipping any ranks.
+
+-- Example Context:
+-- In a company's sales department, we might use these functions to rank salespersons based on their performance.
+-- The RANK function is useful when we want to emphasize the performance gap between salespersons.
+-- On the other hand, DENSE_RANK is beneficial when we want to avoid gaps in ranking, making it more suitable for recognizing each individual's relative performance without penalizing for ties.
+```
