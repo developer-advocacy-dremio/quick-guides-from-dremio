@@ -4,7 +4,7 @@
 
 ```sql
 -- Step 1: Creating a table to store geohash data
-CREATE TABLE GeohashData (
+CREATE TABLE IF NOT EXISTS GeohashData (
     id INT,
     geohash VARCHAR
 );
@@ -52,7 +52,7 @@ WHERE id = 3;
 
 ```sql
 -- Step 1: Creating a table to store events with timestamps
-CREATE TABLE EventLog (
+CREATE TABLE IF NOT EXISTS EventLog (
     id INT,
     eventName VARCHAR,
     eventTime TIMESTAMP
@@ -94,4 +94,43 @@ WHERE id = 3;
 -- To streamline the process of scheduling and analyzing these events, it's helpful to convert all event times to a single standard time zone, such as UTC.
 -- The CONVERT_TIMEZONE function in DremioSQL makes this process easy by allowing us to convert times from local time zones to UTC.
 -- By storing all event times in UTC, we can more easily coordinate between teams in different time zones and perform time-based analysis on our events.
+```
+
+#### ARRAY_TO_STRING
+
+```sql
+-- Step 1: Creating a table with an array column
+CREATE TABLE IF NOT EXISTS ProductInventory (
+    id INT,
+    productName VARCHAR,
+    sizesAvailable ARRAY(VARCHAR)
+);
+
+-- Step 2: Inserting records into the table
+-- Imagine we are a clothing store, and we want to list the sizes available for each product
+INSERT INTO ProductInventory (id, productName, sizesAvailable) VALUES
+(1, 'T-Shirt', ARRAY['S', 'M', 'L', 'XL']),
+(2, 'Jeans', ARRAY['32', '34', '36']);
+
+-- Step 3: Using the ARRAY_TO_STRING function to create a readable list of sizes
+-- Our goal is to display the sizes in a human-readable format on our website.
+
+-- Convert the array of sizes for T-Shirts into a comma-separated string
+SELECT id, productName,
+       ARRAY_TO_STRING(sizesAvailable, ',') AS sizesList
+FROM ProductInventory
+WHERE id = 1;
+-- Result: 'S,M,L,XL'
+
+-- Convert the array of sizes for Jeans into a comma-separated string
+SELECT id, productName,
+       ARRAY_TO_STRING(sizesAvailable, ', ') AS sizesList
+FROM ProductInventory
+WHERE id = 2;
+-- Result: '32, 34, 36'
+
+-- Story Context:
+-- As an online clothing retailer, we maintain an inventory system where the available sizes for each product are stored as arrays.
+-- To display this information on our website, we need to convert these arrays into a user-friendly, comma-separated string format.
+-- The ARRAY_TO_STRING function in DremioSQL helps us transform these arrays into a format that's easy for customers to read and understand.
 ```
