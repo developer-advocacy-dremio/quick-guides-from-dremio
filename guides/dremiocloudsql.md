@@ -249,3 +249,45 @@ FROM SalesData;
 -- The RANK function is useful when we want to emphasize the performance gap between salespersons.
 -- On the other hand, DENSE_RANK is beneficial when we want to avoid gaps in ranking, making it more suitable for recognizing each individual's relative performance without penalizing for ties.
 ```
+
+#### NTILE
+
+```sql
+-- Step 1: Creating a table to store student grades
+CREATE TABLE IF NOT EXISTS StudentGrades (
+    id INT,
+    studentName VARCHAR,
+    grade INT
+);
+
+-- Step 2: Inserting records into the table
+-- Let's say we have a list of student grades for a particular exam
+INSERT INTO StudentGrades (id, studentName, grade) VALUES
+(1, 'Alice', 85),
+(2, 'Bob', 92),
+(3, 'Charlie', 78),
+(4, 'Diana', 88),
+(5, 'Eve', 95),
+(6, 'Frank', 70),
+(7, 'Grace', 82),
+(8, 'Hank', 90),
+(9, 'Ivy', 75),
+(10, 'John', 80);
+
+-- Step 3: Using the NTILE function to find percentile ranks
+-- We want to divide students into 4 quartiles based on their grades
+SELECT studentName, grade,
+       NTILE(4) OVER (ORDER BY grade DESC) AS percentileRank
+FROM StudentGrades;
+
+-- In this query:
+-- NTILE(4) divides the students into 4 groups (quartiles) based on their grades.
+-- Each student is assigned a percentile rank from 1 to 4, where 1 represents the top 25%, 2 represents the 50-75% range, etc.
+-- This ranking helps in understanding where each student stands in terms of academic performance compared to their peers.
+
+-- Example Context:
+-- In an educational setting, understanding student performance in percentile ranks can be useful for various purposes.
+-- It can help teachers identify students who are excelling (top 25%) or those who may need additional support (bottom 25%).
+-- Such an analysis is also beneficial for academic counselors when providing personalized advice and resources to students.
+-- Percentile ranks provide a relative measure of performance, which can be more informative than just looking at raw scores or grades.
+```
