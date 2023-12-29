@@ -291,3 +291,88 @@ FROM StudentGrades;
 -- Such an analysis is also beneficial for academic counselors when providing personalized advice and resources to students.
 -- Percentile ranks provide a relative measure of performance, which can be more informative than just looking at raw scores or grades.
 ```
+
+#### FIRST_VALUE
+
+```sql
+-- Step 1: Creating a table to store sales records for different departments
+CREATE TABLE IF NOT EXISTS SalesRecords (
+    id INT,
+    salesPerson VARCHAR,
+    department VARCHAR,
+    totalSales INT
+);
+
+-- Step 2: Inserting records into the table
+-- Imagine we are a company with salespeople in various departments
+INSERT INTO SalesRecords (id, salesPerson, department, totalSales) VALUES
+(1, 'Alice', 'Electronics', 12000),
+(2, 'Bob', 'Electronics', 15000),
+(3, 'Charlie', 'Home Appliances', 8000),
+(4, 'Diana', 'Electronics', 20000),
+(5, 'Eve', 'Home Appliances', 11000),
+(6, 'Frank', 'Furniture', 9000),
+(7, 'Grace', 'Furniture', 13000),
+(8, 'Hank', 'Electronics', 17000);
+
+-- Step 3: Using the FIRST_VALUE function
+-- We will order salespeople by total sales within their department and compare each person's sales to the top performer in that department.
+SELECT salesPerson, department, totalSales,
+       FIRST_VALUE(totalSales) OVER (PARTITION BY department ORDER BY totalSales DESC) AS topSalesInDept,
+       totalSales - topSalesInDept AS diffFromTopPerformer
+FROM SalesRecords;
+
+-- In this query:
+-- The FIRST_VALUE function finds the highest sales figure (top performer) in each department.
+-- 'topSalesInDept' shows the sales figure of the top performer in the same department.
+-- 'diffFromTopPerformer' shows the difference in sales between the salesperson and the top performer in their department.
+
+-- Example Context:
+-- For a sales manager, this analysis is useful for identifying the gap between top performers and other team members in each department.
+-- This can help in setting targets, understanding training needs, and recognizing top performers.
+-- It also allows for tailored strategies for each department based on their specific performance dynamics.
+```
+
+#### LAG
+
+```sql
+-- Step 1: Creating a table to store monthly sales data
+CREATE TABLE IF NOT EXISTS MonthlySales (
+    id INT,
+    salesMonth DATE,
+    totalSales INT
+);
+
+-- Step 2: Inserting records into the table
+-- These records represent the total sales for each month in a given year
+INSERT INTO MonthlySales (id, salesMonth, totalSales) VALUES
+(1, '2021-01-01', 10000),
+(2, '2021-02-01', 12000),
+(3, '2021-03-01', 11000),
+(4, '2021-04-01', 13000),
+(5, '2021-05-01', 12500),
+(6, '2021-06-01', 14000),
+(7, '2021-07-01', 13500),
+(8, '2021-08-01', 15000),
+(9, '2021-09-01', 15500),
+(10, '2021-10-01', 16000),
+(11, '2021-11-01', 15000),
+(12, '2021-12-01', 17000);
+
+-- Step 3: Using the LAG function to compare current month's sales with the previous month
+SELECT salesMonth, totalSales,
+       LAG(totalSales, 1) OVER (ORDER BY salesMonth) AS previousMonthSales,
+       totalSales - previousMonthSales AS salesDifference
+FROM MonthlySales;
+
+-- In this query:
+-- LAG(totalSales, 1) retrieves the sales figure from the previous month.
+-- 'previousMonthSales' shows the sales figure of the previous month.
+-- 'salesDifference' shows the difference in sales between the current month and the previous month.
+
+-- Example Context:
+-- In a business setting, analyzing month-over-month sales data is crucial for understanding sales trends and making informed decisions.
+-- By comparing current month's sales with the previous month, the company can identify growth trends, seasonal variations, or any unexpected changes.
+-- This analysis can inform marketing strategies, inventory management, and financial planning.
+-- The LAG function provides an efficient way to perform this comparison without complex joins or subqueries.
+```
