@@ -172,3 +172,36 @@ FROM EventSchedule WHERE timezone = 'America/New_York';
 -- The CURRENT_DATE_UTC function helps us understand the current date in a standard time zone, regardless of where our team members are located.
 -- The daysUntilEvent column is particularly useful for planning and logistics, as it tells us how many days are left until each event.
 ```
+
+#### REGEXP_COL_LIKE
+
+```sql
+-- Step 1: Creating a table for music albums with a field for genres
+CREATE TABLE IF NOT EXISTS MusicAlbums (
+    id INT,
+    albumName VARCHAR,
+    genres VARCHAR
+);
+
+-- Step 2: Inserting records into the table
+-- Albums can have multiple genres, listed in a single string
+INSERT INTO MusicAlbums (id, albumName, genres) VALUES
+(1, 'The Dark Side of the Moon', 'Rock, Progressive Rock, Psychedelic Rock'),
+(2, 'Thriller', 'Pop, Rock, R&B'),
+(3, 'Back in Black', 'Hard Rock, Rock'),
+(4, 'The Bodyguard', 'R&B, Soul, Pop'),
+(5, 'Rumours', 'Rock, Pop');
+
+-- Step 3: Using the REGEXP_COL_LIKE function to find albums in a specific genre
+-- For example, we want to find all albums that are classified under 'Rock'
+
+SELECT id, albumName, genres
+FROM MusicAlbums
+WHERE REGEXP_COL_LIKE(genres, 'Rock');
+
+-- Story Context:
+-- In a music database, albums can often fall under multiple genres, making it challenging to categorize them strictly.
+-- By storing the genres as a single string and using REGEXP_COL_LIKE, we can flexibly search for albums that include a specific genre in their classification.
+-- This approach is particularly useful for music enthusiasts and analysts who are interested in exploring albums across overlapping genres.
+-- For example, finding all albums that include 'Rock' in their genres helps identify a wide range of albums that touch upon the Rock genre, regardless of their primary classification.
+```
