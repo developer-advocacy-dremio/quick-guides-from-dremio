@@ -158,7 +158,7 @@ INSERT INTO EventSchedule (id, eventName, eventTime, timezone) VALUES
 SELECT id, eventName,
        CONVERT_TIMEZONE('America/New_York', 'UTC', eventTime) AS eventTimeUTC,
        CURRENT_DATE_UTC() AS currentDateUTC,
-       DATEDIFF(CURRENT_DATE_UTC(), eventTimeUTC) AS daysUntilEvent
+       DATEDIFF(currentDateUTC, eventTimeUTC) AS daysSinceEvent
 FROM EventSchedule WHERE timezone = 'America/New_York';
 
 -- In this query:
