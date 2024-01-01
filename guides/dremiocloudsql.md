@@ -787,3 +787,83 @@ WHERE a.attractionName = 'Statue of Liberty' AND b.attractionName = 'Eiffel Towe
 -- Additional Use Case:
 -- This function can also be used in logistics for route optimization, in real estate for proximity analysis, or in any industry where geographical distance calculations are necessary.
 ```
+
+#### LISTAGG
+
+```sql
+-- Creating the Books table to store book information
+CREATE TABLE IF NOT EXISTS Books (
+    id INT,
+    title VARCHAR,
+    genre VARCHAR
+);
+
+-- Inserting sample book records into the Books table
+INSERT INTO Books (id, title, genre) VALUES
+(1, 'To Kill a Mockingbird', 'Classic'),
+(2, '1984', 'Classic'),
+(3, 'The Great Gatsby', 'Classic'),
+(4, 'Neuromancer', 'Science Fiction'),
+(5, 'Dune', 'Science Fiction'),
+(6, 'Brave New World', 'Science Fiction'),
+(7, 'The Catcher in the Rye', 'Classic');
+
+-- Using LISTAGG to concatenate book titles by genre
+-- This query groups books by their genre and concatenates their titles
+SELECT genre, LISTAGG(title, '; ') AS titles
+FROM Books
+GROUP BY genre;
+
+-- Using LISTAGG with DISTINCT to avoid duplicate titles in each genre list
+-- This is useful if there are duplicate book entries in the Books table
+SELECT genre, LISTAGG(DISTINCT title, '| ') AS distinct_titles
+FROM Books
+GROUP BY genre;
+
+-- Using LISTAGG with ORDER BY to sort book titles alphabetically within each genre
+-- This orders the titles alphabetically before concatenating them
+SELECT genre, LISTAGG(title, ', ') WITHIN GROUP (ORDER BY title ASC) AS ordered_titles
+FROM Books
+GROUP BY genre;
+
+-- The resulting output from these queries will show a string of book titles for each genre
+-- 'titles' will have all titles concatenated with '; '
+-- 'distinct_titles' will have distinct titles concatenated with '| '
+-- 'ordered_titles' will have titles alphabetically ordered and concatenated with ', '
+```
+
+#### CORR
+
+```sql
+-- Creating a SalesData table to store information about sales and advertising expenses
+CREATE TABLE IF NOT EXISTS SalesDataCORR (
+    id INT,
+    "month" VARCHAR,
+    advertisingSpend FLOAT, -- Amount spent on advertising in a given month
+    salesRevenue FLOAT       -- Total sales revenue generated in the same month
+);
+
+-- Inserting sample records into the SalesData table
+-- These records represent the advertising spend and sales revenue for each month
+INSERT INTO SalesDataCORR (id, "month", advertisingSpend, salesRevenue) VALUES
+(1, 'January', 2000, 5000),
+(2, 'February', 3000, 7000),
+(3, 'March', 4000, 9000),
+(4, 'April', 5000, 12000),
+(5, 'May', 6000, 15000);
+
+-- Using the CORR function to calculate the Pearson correlation coefficient
+-- This coefficient measures the linear correlation between two variables: advertisingSpend and salesRevenue
+SELECT 
+    "CORR"(advertisingSpend, salesRevenue) AS correlationCoefficient
+FROM 
+    SalesDataCORR;
+
+-- Explanation:
+-- The CORR function is used here to understand the relationship between advertising spend and sales revenue.
+-- The Pearson correlation coefficient (result of CORR) ranges from -1 to 1.
+-- A value close to 1 indicates a strong positive correlation (as advertising spend increases, sales revenue tends to increase).
+-- A value close to -1 indicates a strong negative correlation (as advertising spend increases, sales revenue tends to decrease).
+-- A value close to 0 implies little or no linear relationship between the expenditures on advertising and the sales revenue.
+-- This analysis is crucial for the marketing department to understand the effectiveness of their advertising strategies.
+```
