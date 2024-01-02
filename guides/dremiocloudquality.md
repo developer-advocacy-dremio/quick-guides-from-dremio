@@ -75,7 +75,6 @@ SELECT * FROM DACSalesData AT BRANCH main;
 -- QUERY INGESTION BRANCH
 SELECT * FROM DACSalesData AT BRANCH dataIntegration_010224;
 
--- Note: The actual commands to switch branches and merge may vary based on the database system. 
 -- The checks for data quality (negative amounts and future dates) are simplified for this example.
 -- In a real-world scenario, more sophisticated validation logic and error handling would be required.
 ```
@@ -133,4 +132,69 @@ WHERE DATEDIFF(CURRENT_DATE, p.dateAdded) > bc.value_1 AND p.onSale = FALSE;
 
 -- Note: The results from these queries highlight products that do not meet the business constraints.
 -- They can be used to flag products for review or automatically update product statuses.
+```
+
+### Checking Nulls
+
+```sql
+-- Creating a table for customer data
+-- The table includes fields for customer ID, name, email, address, and phone number
+CREATE TABLE CustomerDataToValidate (
+    customerId INT,
+    customerName VARCHAR,
+    email VARCHAR,
+    address VARCHAR,
+    phoneNumber VARCHAR
+);
+
+-- Inserting sample customer data into the table
+-- Some records intentionally include NULL values to simulate missing data
+INSERT INTO CustomerDataToValidate (customerId, customerName, email, address, phoneNumber) VALUES
+(1, 'John Doe', 'john.doe@example.com', '123 Main St', NULL),  -- Missing phone number
+(2, 'Jane Smith', NULL, '456 Elm St', '555-0123'),             -- Missing email
+(3, 'Alice Johnson', 'alice.j@example.com', NULL, '555-0456'), -- Missing address
+(4, 'Bob Brown', 'bob.b@example.com', '789 Oak St', '555-0789');
+
+-- Checking for customers with missing critical information
+-- This helps in identifying data quality issues
+
+-- Identifying customers with missing email addresses
+SELECT customerId, customerName
+FROM CustomerDataToValidate
+WHERE email IS NULL;
+
+-- Identifying customers with missing phone numbers
+SELECT customerId, customerName
+FROM CustomerDataToValidate
+WHERE phoneNumber IS NULL;
+
+-- Identifying customers with missing addresses
+SELECT customerId, customerName
+FROM CustomerDataToValidate
+WHERE address IS NULL;
+
+-- Remediation of Null Values
+-- Setting default values for missing critical information
+-- This is a temporary measure to ensure data integrity until actual data can be collected
+
+-- Setting a default email for customers with missing emails
+UPDATE CustomerDataToValidate
+SET email = 'default@example.com'
+WHERE email IS NULL;
+
+-- Setting a default phone number for customers with missing phone numbers
+UPDATE CustomerDataToValidate
+SET phoneNumber = '000-0000'
+WHERE phoneNumber IS NULL;
+
+-- Setting a default address for customers with missing addresses
+UPDATE CustomerDataToValidate
+SET address = 'Unknown Address'
+WHERE address IS NULL;
+
+-- QUERY UPDATED TABLE
+SELECT * FROM CustomerDataToValidate;
+
+-- Note: These updates provide a temporary solution for missing data.
+-- In a real-world application, you would likely follow up to collect the actual information from the customers.
 ```
