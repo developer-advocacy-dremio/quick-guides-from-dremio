@@ -4,7 +4,8 @@ Quick Guides from Dremio on Several topics
 Want to learn more about Dremio? Here is a [great list of resources](./digests/getstarted.md).
 
 ## Dremio
-- [Dremio Cloud SQL Examples](./guides/dremiocloudsql.md)
+- [Dremio Cloud SQL Function Examples](./guides/dremiocloudsql.md)
+- [Dremio Cloud Data Quality and Validation Examples](./guides/dremiocloudquality.md)
 - [Dremio Arctic in Spark Notebook](./guides/arcticexercise.md)
 - [Creating a Local Dremio/Spark/Minio Environment for Experimentation](./guides/icebergminiodremio.md)
 

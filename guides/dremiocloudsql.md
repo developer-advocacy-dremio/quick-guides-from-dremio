@@ -1,4 +1,4 @@
-## Dremio Cloud SQL Examples
+## Dremio Cloud SQL Function Examples
 
 #### ST_FROMGEOHASH
 
