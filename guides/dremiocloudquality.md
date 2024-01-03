@@ -198,3 +198,179 @@ SELECT * FROM CustomerDataToValidate;
 -- Note: These updates provide a temporary solution for missing data.
 -- In a real-world application, you would likely follow up to collect the actual information from the customers.
 ```
+
+#### Decision Tables
+
+```sql
+-- Creating a table to hold product performance data
+CREATE TABLE ProductPerformance (
+    ProductID INT,
+    SalesVolume VARCHAR, -- 'High', 'Medium', 'Low', 'Very Low'
+    CustomerFeedback INT, -- Percentage of positive feedback
+    Trending VARCHAR, -- 'Yes' or 'No'
+    LifecycleStage VARCHAR -- 'Introduction', 'Growth', 'Maturity', 'Decline'
+);
+
+-- Inserting sample data into the ProductPerformance table
+INSERT INTO ProductPerformance (ProductID, SalesVolume, CustomerFeedback, Trending, LifecycleStage) VALUES
+(1, 'High', 90, 'Yes', 'Growth'),
+(2, 'Low', 40, 'No', 'Decline'),
+(3, 'Medium', 60, 'No', 'Maturity'),
+(4, 'Very Low', 85, 'Yes', 'Introduction'),
+(5, 'Low', 45, 'No', 'Decline');
+
+-- Query to determine which products should be discontinued
+-- The decision is based on a combination of sales volume, customer feedback, market trend, and product lifecycle stage
+SELECT 
+    ProductID,
+    CASE 
+        WHEN SalesVolume = 'Low' AND CustomerFeedback < 50 AND Trending = 'No' AND LifecycleStage = 'Decline' THEN 'Yes'
+        WHEN SalesVolume = 'Very Low' THEN 'Yes'
+        ELSE 'No'
+    END AS Discontinue
+FROM 
+    ProductPerformance;
+
+-- Explanation:
+-- The query analyzes each product's performance based on sales volume, customer feedback, current market trends, and its lifecycle stage.
+-- Products with low sales volume, low customer feedback, not trending in the market, and in the decline stage are marked for discontinuation.
+-- Additionally, products with very low sales volume are also considered for discontinuation regardless of other factors.
+-- The output provides a list of product IDs along with a decision on whether they should be discontinued ('Yes') or not ('No').
+```
+
+#### SCD2
+
+```sql
+-- Creating a table for customer data with SCD Type 2 implementation
+CREATE TABLE IF NOT EXISTS CustomerSCD2 (
+    customerId INT,       -- Surrogate key
+    customerBusinessId INT,           -- Business key
+    customerName VARCHAR,
+    email VARCHAR,
+    effectiveDate DATE,               -- Date when the record becomes effective
+    expirationDate DATE,              -- Date when the record expires
+    isCurrent BOOLEAN                 -- Flag to indicate if the record is current
+);
+
+-- Inserting initial customer data
+INSERT INTO CustomerSCD2 (customerId, customerBusinessId, customerName, email, effectiveDate, expirationDate, isCurrent)
+VALUES (1, 1, 'John Doe', 'john.doe@example.com', '2021-01-01', '9999-12-31', TRUE);
+
+-- Simulating an update in customer's email
+-- Instead of updating the record directly, insert a new record and update the old record's expiration date and isCurrent flag
+
+-- Step 1: Update existing record - Set expirationDate to yesterday and isCurrent to false
+UPDATE CustomerSCD2
+SET expirationDate = CURRENT_DATE - INTERVAL '1' DAY, isCurrent = FALSE
+WHERE customerBusinessId = 1 AND isCurrent = TRUE;
+
+-- Step 2: Insert new record with updated information (e.g., changed email)
+INSERT INTO CustomerSCD2 (customerId, customerBusinessId, customerName, email, effectiveDate, expirationDate, isCurrent)
+VALUES (2, 1, 'John Doe', 'john.newemail@example.com', CURRENT_DATE, '9999-12-31', TRUE);
+
+-- Query to See Result
+
+SELECT * FROM CustomerSCD2 WHERE customerBusinessId = 1;
+
+-- Explanation:
+-- The CustomerSCD2 table includes a surrogate key (customerId), a natural/business key (customerBusinessId), and other customer attributes.
+-- SCD Type 2 is implemented by inserting a new record with updated information while keeping the historical record with updated expiration date and isCurrent flag.
+-- This allows for maintaining a full history of changes for each customer.
+```
+
+#### SCD3
+
+```sql
+-- Creating a table for product data with SCD Type 3 implementation
+-- This table includes a product ID, current price, previous price, and the date when the current price was effective
+CREATE TABLE IF NOT EXISTS ProductSCD3 (
+    productId INT,
+    productName VARCHAR,
+    currentPrice FLOAT,
+    previousPrice FLOAT,      -- Field to store the previous price
+    priceEffectiveDate DATE   -- Date when the current price became effective
+);
+
+-- Inserting initial product data
+INSERT INTO ProductSCD3 (productId, productName, currentPrice, previousPrice, priceEffectiveDate)
+VALUES 
+(1, 'Gadget', 29.99, NULL, '2022-01-01'); -- Initial product entry with no previous price
+
+-- Updating the product price and preserving the old price in previousPrice
+-- Simulating a price change scenario
+-- Assume the price of 'Gadget' is updated from 29.99 to 34.99 on '2022-06-01'
+
+-- Step 1: Update the record with the new price and move the old price to previousPrice
+UPDATE ProductSCD3
+SET 
+    previousPrice = currentPrice,         -- Move the current price to previousPrice
+    currentPrice = 34.99,                 -- Set the new current price
+    priceEffectiveDate = '2022-06-01'     -- Update the effective date of the new price
+WHERE 
+    productId = 1;
+
+-- Query the Result
+
+SELECT * FROM ProductSCD3;
+
+-- Explanation:
+-- The ProductSCD3 table captures the product's current and previous prices.
+-- When a product's price changes, the current price is moved to the previousPrice column, and the new price is recorded in currentPrice.
+-- The priceEffectiveDate is updated to reflect the date when the new price became effective.
+-- This approach allows tracking the history of one attribute (price in this case) while keeping the rest of the record unchanged.
+
+-- Note:
+-- SCD Type 3 is not typically used for tracking multiple historical changes as it only retains the current and one previous state.
+-- For a more comprehensive historical track, SCD Type 2 is usually preferred.
+```
+
+#### SCD4
+
+```sql
+-- Creating a main table for current product data
+CREATE TABLE ProductDataSCD4 (
+    productId INT,
+    productName VARCHAR,
+    price FLOAT
+);
+
+-- Creating a history table for tracking changes in product data
+CREATE TABLE ProductDataHistory (
+    historyId INT,
+    productId INT,
+    productName VARCHAR,
+    price FLOAT,
+    changeDate DATE
+);
+
+-- Inserting initial data into the ProductData table
+INSERT INTO ProductDataSCD4 (productId, productName, price) VALUES
+(1, 'Gadget', 29.99),
+(2, 'Widget', 15.99);
+
+-- Simulating an update: the price of 'Gadget' changes from 29.99 to 34.99
+
+-- Step 1: Insert the current state into the history table before updating
+-- This captures the historical state of the product before the price change
+INSERT INTO ProductDataHistory (historyId, productId, productName, price, changeDate)
+SELECT 1, productId, productName, price, CURRENT_DATE
+FROM ProductDataSCD4
+WHERE productId = 1;
+
+-- Step 2: Update the main ProductData table with the new price
+-- This reflects the current state of the product after the price change
+UPDATE ProductDataSCD4
+SET price = 34.99
+WHERE productId = 1;
+
+-- See Results
+SELECT * FROM ProductDataHistory;
+SELECT * FROM ProductDataSCD4;
+
+-- Explanation:
+-- The ProductData table stores the current state of product information.
+-- The ProductDataHistory table keeps a record of all historical changes to the products.
+-- When a product's information (like price) changes, the old state is first saved into the ProductDataHistory table.
+-- Then, the ProductData table is updated with the new information.
+-- This approach allows for tracking the entire history of changes for each product while maintaining current data separately.
+```
