@@ -39,7 +39,7 @@ services:
       - MINIO_REGION_NAME=us-east-1
       - MINIO_REGION=us-east-1
     networks:
-      iceberg-nessie-flink-net:
+      dremio-laptop-lakehouse:
     ports:
       - 9001:9001
       - 9000:9000
