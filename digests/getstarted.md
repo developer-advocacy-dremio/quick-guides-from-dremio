@@ -15,6 +15,12 @@ This page contains a list of great articles and resources for getting started wi
 - [Blog: Virtual Data Marts 101: The Benefits and How-To](https://www.dremio.com/blog/virtual-data-marts-101-the-benefits-and-how-to/)
 - [Blog: 5 Use Cases for the Dremio Lakehouse](https://www.dremio.com/blog/5-use-cases-for-the-dremio-lakehouse/)
 
+## Dremio Cloud Demo Videos
+- [Dremio Cloud UI & Reflections](https://www.youtube.com/watch?v=FWllGuYvKXk)
+- [Git for Data - Dremio's Data Lakehouse Features](https://www.youtube.com/watch?v=THDDa17TNis)
+- [Dremio Semantic Layer and Generative AI Features](https://www.youtube.com/watch?v=uikfFeKyc-A)
+- [Using Dremio with DBT](https://www.youtube.com/watch?v=KE0DkxF-GI8)
+
 ## What is a Data Lakehouse
 - [Video: From Data Lake to Data Lakehouse](https://www.youtube.com/watch?v=bvXj4ANMy10)
 - [Video: Data Lakehouse 101](https://www.youtube.com/watch?v=9R2z-mzzX0M)
