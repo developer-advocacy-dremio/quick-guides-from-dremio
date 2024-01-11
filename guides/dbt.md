@@ -110,3 +110,50 @@ Reference to a source model. This ensure that the referenced model will be run b
 
 - `dbt init <projectname>` - create a new project
 - `dbt run` run dbt models
+
+## Using the project.yml to configure groups of models
+
+You can specify different locations for different models by folder or tag like below.
+
+```yml
+models:
+  my_project:
+    # Apply to all models
+    +materialized: view
+
+    # Configuration for models in a specific folder
+    marketing:
+      +schema: marketing_schema
+      +database: marketing_database
+
+    # Configuration for models with a specific naming pattern
+    tag:bi:
+      +materialized: table
+```
+
+You can can tag different models like so...
+
+In a single model:
+
+```sql
+{{ config(tags=["daily", "analytics"]) }}
+```
+
+Groups of models from project.yml
+
+```yml
+models:
+  my_project:
+    # Apply tags to all models in a specific directory
+    marketing:
+      +tags: ["marketing", "weekly"]
+    # Apply tags to a specific model
+    my_model:
+      +tags: ["core_model", "daily"]
+```
+
+You can even only run models with certain tags using:
+
+```
+dbt run --model tag:daily
+```
