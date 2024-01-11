@@ -374,3 +374,74 @@ SELECT * FROM ProductDataSCD4;
 -- Then, the ProductData table is updated with the new information.
 -- This approach allows for tracking the entire history of changes for each product while maintaining current data separately.
 ```
+
+## Semantic Layer Example
+
+```sql
+-- Creating bronze tables for local tax data
+-- Bronze Table 1: Individual Tax Records
+CREATE TABLE arctic."Tax Collections".bronze.individual_tax (
+    taxpayer_id INT,
+    full_name VARCHAR,
+    income FLOAT,
+    tax_paid FLOAT
+);
+
+-- Bronze Table 2: Business Tax Records
+CREATE TABLE arctic."Tax Collections".bronze.business_tax (
+    business_id INT,
+    business_name VARCHAR,
+    revenue FLOAT,
+    tax_paid FLOAT
+);
+
+-- Inserting flawed data into bronze tables
+-- Inserting data into Individual Tax Records
+INSERT INTO arctic."Tax Collections".bronze.individual_tax (taxpayer_id, full_name, income, tax_paid) VALUES
+(1, 'John Doe', 50000, 5000),
+(2, 'Jane Smith', NULL, 4500), -- Missing income
+(3, 'Alice Johnson', 70000, -700); -- Negative tax paid (flawed)
+
+-- Inserting data into Business Tax Records
+INSERT INTO arctic."Tax Collections".bronze.business_tax (business_id, business_name, revenue, tax_paid) VALUES
+(101, 'ABC Corp', 200000, 20000),
+(102, 'XYZ Inc', NULL, 18000), -- Missing revenue
+(103, 'Acme LLC', 150000, -1500); -- Negative tax paid (flawed)
+
+-- Creating silver views to clean up the data
+-- Silver View 1: Cleaned Individual Tax Records
+CREATE VIEW arctic."Tax Collections".silver.individual_tax AS
+SELECT
+    taxpayer_id,
+    full_name,
+    COALESCE(income, 0) AS income, -- Replacing NULL income with 0
+    GREATEST(tax_paid, 0) AS tax_paid -- Correcting negative tax_paid
+FROM arctic."Tax Collections".bronze.individual_tax;
+
+-- Silver View 2: Cleaned Business Tax Records
+CREATE VIEW arctic."Tax Collections".silver.business_tax AS
+SELECT
+    business_id,
+    business_name,
+    COALESCE(revenue, 0) AS revenue, -- Replacing NULL revenue with 0
+    GREATEST(tax_paid, 0) AS tax_paid -- Correcting negative tax_paid
+FROM arctic."Tax Collections".bronze.business_tax;
+
+-- Creating a gold view: Consolidated Tax Records
+CREATE VIEW arctic."Tax Collections".gold.tax_records AS
+SELECT
+    'Individual' AS taxpayer_type,
+    taxpayer_id AS id,
+    full_name AS name,
+    income,
+    tax_paid
+FROM arctic."Tax Collections".silver.individual_tax
+UNION ALL
+SELECT
+    'Business' AS taxpayer_type,
+    business_id AS id,
+    business_name AS name,
+    revenue AS income,
+    tax_paid
+FROM arctic."Tax Collections".silver.business_tax;
+```
