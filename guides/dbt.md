@@ -76,7 +76,7 @@ The end result will create a profile which can be found in `~/.dbt/profiles.yml`
 
 - use `9047` as port
 
-- put username and password
+- put username and password (or username/PAT if using Dremio cloud or choose software with PAT)
 
 - use the name of nessie/metastore/object storage source for "object_storage_soure" (can also be as arctic catalog for cloud)
 
