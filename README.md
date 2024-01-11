@@ -9,6 +9,7 @@ Want to learn more about Dremio? Here is a [great list of resources](./digests/g
 - [Dremio Cloud Data Quality and Validation Examples](./guides/dremiocloudquality.md)
 - [Dremio Arctic in Spark Notebook](./guides/arcticexercise.md)
 - [Creating a Local Dremio/Spark/Minio Environment for Experimentation](./guides/icebergminiodremio.md)
+- [Configuring Dremio with dbt](./guides/dbt.md)
 
 ## Iceberg
 - [Iceberg 101 Course](https://www.dremio.com/subsurface/apache-iceberg-101-your-guide-to-learning-apache-iceberg-concepts-and-practices/)
