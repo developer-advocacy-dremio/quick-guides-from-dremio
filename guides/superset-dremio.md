@@ -1,5 +1,7 @@
 ## Trying out Building BI Dashboards from SuperSet from your Laptop
 
+[Video Demonstrating how to setup Apache Superset and connect with Dremio](https://youtu.be/604i8vaukZs)
+
 [Link to Repo with Dockerfile for dremio-superset Docker Image](https://github.com/AlexMercedCoder/dremio-superset-docker-image)
 
 run the container
