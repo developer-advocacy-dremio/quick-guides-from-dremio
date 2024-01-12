@@ -65,8 +65,8 @@ class DremioConnection:
         df = pl.from_arrow(table)
         return df
 
-    #Returns a Polars Dataframe
-    def toPolars(self, querystring):
+    #Returns a Pandas Dataframe
+    def toPandas(self, querystring):
         streamReader = self.query(querystring, self.client, self.headers)
         df = streamReader.read_pandas()
         return df
