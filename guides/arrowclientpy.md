@@ -5,6 +5,8 @@
 
 The Code Below can be used to create an arrow client in any python project.
 
+- Example of what a Dremio Arrow Flight URL would look like: `grpc+tls://data.dremio.cloud:443`
+
 This require the `pyarrow` library
 
 - for the `toDuckDB` function you must also have the `duckdb` library
