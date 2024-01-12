@@ -1,5 +1,7 @@
 ## Trying out Building BI Dashboards from SuperSet from your Laptop
 
+[Link to Repo with Dockerfile for dremio-superset Docker Image](https://github.com/AlexMercedCoder/dremio-superset-docker-image)
+
 run the container
 
 ```shell
