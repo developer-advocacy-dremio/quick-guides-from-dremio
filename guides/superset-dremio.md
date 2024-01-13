@@ -87,5 +87,6 @@ networks:
 - Setup dremio following the directions [here](./nessie_dremio.md)
 - run `docker-compose exec dashboards superset init`
 - login at `localhost:8080/login`
-- use the url to esablish connection `dremio+flight://<dremio-username>:<dremio-password@dashboards:32010/?UseEncryption=false` (if not using the docker-compose file above change `dashboards` to the ip address to machine with Dremio running)
+- use the url to esablish connection `dremio+flight://<dremio-username>:<dremio-password@dremio:32010/?UseEncryption=false` (if not using the docker-compose file above change `dremio` to the ip address to machine with Dremio running)
+- If you need to look up the ip address of a docker container use `docker network ls` to see your docker networks then `docker network <name_or_id>` to see the details of the containers on that network
 - click test connection
