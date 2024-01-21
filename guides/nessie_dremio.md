@@ -59,6 +59,14 @@ networks:
   dremio-laptop-lakehouse:
 ```
 
+* If you want the files minio writes to be in your host file system add a volume entry
+
+```yaml
+image: minio/minio
+    volumes:
+      - /path/to/your/host/directory:/data
+```
+
 Open up a terminal in the same folder as this `docker-compose.yml` file and run the command
 
 ```shell
