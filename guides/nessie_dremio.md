@@ -142,5 +142,3 @@ SELECT * FROM nessie.names;
 
 ### Things to Be Aware Of
 - By default the Nessie images uses memory to store references, so if you shut down and restart the cluster Nessie will forget your tables. [Configure Nessie with a Data Store to Persist Nessie Metadata](https://projectnessie.org/try/configuration/#support-for-the-database-specific-implementations)
-
-- Reflections may not work in a single node docker environment which is meant for evaluation. To use reflections, be able to create multiple users and more create full Dremio deployment by [signing up for Dremio Cloud](https://www.dremio.com/get-started/) or [Deploying Dremio Community Edition with Kubernetes](https://docs.dremio.com/current/get-started/kubernetes-quickstart).
