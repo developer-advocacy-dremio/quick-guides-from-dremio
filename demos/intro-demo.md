@@ -3,7 +3,7 @@
 - Create a Space/Folder and create the following tables with the following data:
 
 ```sql
-CREATE TABLE departments (
+CREATE TABLE IF NOT EXISTS departments (
     department_id INT,
     name VARCHAR(255),
     location VARCHAR(255),
@@ -12,13 +12,13 @@ CREATE TABLE departments (
     founded_year INT
 );
 
-CREATE TABLE employees (
+CREATE TABLE IF NOT EXISTS employees (
     employee_id INT,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
     email VARCHAR(255),
     department_id INT,
-    salary DECIMAL(10, 2),
+    salary DECIMAL(10, 2)
 );
 
 INSERT INTO departments (department_id, name, location, budget, manager_id, founded_year) VALUES
@@ -44,15 +44,31 @@ INSERT INTO employees (employee_id, first_name, last_name, email, department_id,
 ## Step 1 - Create a View Joining the Data From Two Tables
 
 ```sql
-SELECT *
-FROM employees e
+CREATE OR REPLACE VIEW raw_department_employees 
+AS SELECT * FROM employees e
 JOIN departments d ON e.department_id = d.department_id;
 ```
 
 ## Step 2 - Create a view with only employee names and department name
 
+```sql
+SELECT first_name, last_name, name as department FROM "raw_department_employees"
+```
+
 
 ## Step 3 - Create a single name field
+
+```sql
+SELECT CONCAT("first_name",' ',"last_name") AS full_name, department
+FROM demos."2024".feb.test1."name_and_department" AT BRANCH "main";
+```
+
+or
+
+```sql
+SELECT first_name || ' ' || last_name, department AS "first_name"
+FROM   name_and_department
+```
 
 ## Step 4 - Add the budget field
 
