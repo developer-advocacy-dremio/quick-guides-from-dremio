@@ -75,6 +75,15 @@ FROM   name_and_department
 ## Step 5 - Add Records to the Table
 
 ```sql
+-- QUERY TABLE ON MAIN BRANCH
+SELECT COUNT(*) FROM departments;
+SELECT COUNT(*) FROM departments;
+
+-- CREATE AND SWITCH TO NEW BRANCH
+CREATE BRANCH feb112024 IN demos;
+USE BRANCH feb112024 IN demos;
+
+-- INGEST NEW DATA
 INSERT INTO departments (department_id, name, location, budget, manager_id, founded_year) VALUES
 (6, 'Customer Support', 'Denver', 400000.00, 6, 2005),
 (7, 'Finance', 'Miami', 1100000.00, 7, 1998),
@@ -88,4 +97,22 @@ INSERT INTO employees (employee_id, first_name, last_name, email, department_id,
 (13, 'Alexander', 'Gomez', 'alexander.gomez@example.com', 8, 76000.00),
 (14, 'Jessica', 'Clark', 'jessica.clark@example.com', 9, 88000.00),
 (15, 'Daniel', 'Morales', 'daniel.morales@example.com', 10, 67000.00);
+
+-- QUERY TABLES ON ETL BRANCH
+SELECT COUNT(*) FROM departments;
+SELECT COUNT(*) FROM departments;
+
+-- SWITCH TO MAIN BRANCH
+USE BRANCH main IN demos;
+
+-- QUERY TABLES ON MAIN BRANCH BEFORE MERGE
+SELECT COUNT(*) FROM departments;
+SELECT COUNT(*) FROM departments;
+
+-- MERGE CHANGES
+MERGE BRANCH feb112024 INTO main IN demos;
+
+-- QUERY TABLES ON MAIN BRANCH AFTER MERGE
+SELECT COUNT(*) FROM departments;
+SELECT COUNT(*) FROM departments;
 ```
