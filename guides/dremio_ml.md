@@ -131,5 +131,79 @@ mse = mean_squared_error(y_test, predictions)
 print(f"Mean Squared Error: {mse}")
 ```
 
+## End to End Example
+
+Make sure to adjust SQL to reflect your catalog of namespaces.
+
+```py
+from dremio_simple_query.connect import DremioConnection
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+import pandas as pd
+import numpy as np
+from os import getenv
+from dotenv import load_dotenv
+
+# Load environment variables for Dremio connection
+load_dotenv()
+token = getenv("TOKEN")
+uri = getenv("ARROW_ENDPOINT")
+
+# Establish connection to Dremio
+dremio = DremioConnection(token, uri)
+
+# Step 1: Create a table in Dremio
+create_table_sql = """
+CREATE TABLE my_dremio_catalog.sample_table (
+    id INT,
+    feature1 DOUBLE,
+    feature2 DOUBLE,
+    target DOUBLE
+)
+"""
+dremio.execute(create_table_sql)
+
+# Step 2: Insert data with flaws into the table
+insert_data_sql = """
+INSERT INTO my_dremio_catalog.sample_table (id, feature1, feature2, target) VALUES
+(1, 10.0, NULL, 50.5),
+(2, NULL, 20.5, NULL),
+(3, 15.5, 25.0, 60.0),
+(4, -5.0, 30.0, 70.0)
+"""
+dremio.toArrow(insert_data_sql)
+
+# Step 3: Check for data flaws (e.g., NULLs, negative values)
+# This step would involve querying the data and analyzing it, 
+# but for simplicity, we proceed to cleaning assuming we know the flaws.
+
+# Step 4: Clean data flaws
+# Remove or impute NULL values, correct negative values
+clean_data_sql = """
+UPDATE my_dremio_catalog.sample_table SET feature1 = ABS(feature1) WHERE feature1 < 0;
+UPDATE my_dremio_catalog.sample_table SET feature1 = 0 WHERE feature1 IS NULL;
+UPDATE my_dremio_catalog.sample_table SET target = 0 WHERE target IS NULL;
+"""
+dremio.toArrow(clean_data_sql)
+
+# Step 5: Query the cleaned data
+query_cleaned_data_sql = "SELECT * FROM sample_table"
+df = dremio.toArrow(query_cleaned_data_sql)
+
+# Assuming the DataFrame `df` is ready for machine learning as is
+
+# Step 6: Split data for model training
+X = df[['feature1', 'feature2']].fillna(0)  # Impute missing values if any remain
+y = df['target']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Train a simple Linear Regression model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Display coefficients
+print("Model Coefficients:", model.coef_)
+```
+
 The trained model is used to make predictions on the test dataset (X_test). The mean squared error between the predictions and the actual values (y_test) is calculated and printed. This evaluates how well the model has learned to predict the target variable.
 Each line of this code contributes to a workflow for querying data from Dremio, preparing it for machine learning, training a model, and evaluating its performance.
