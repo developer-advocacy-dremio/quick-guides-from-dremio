@@ -11,6 +11,7 @@ Want to learn more about Dremio? Here is a [great list of resources](./digests/g
 - [Creating a Local Dremio/Spark/Minio Environment for Experimentation](./guides/icebergminiodremio.md)
 - [Configuring Dremio with dbt](./guides/dbt.md)
 - [Trying Superset with Dremio Cloud from your Laptop](./guides/superset-dremio.md)
+- [Examples of Dremio for Machine Learning](./guides/dremio_ml.md)
 
 ## Iceberg
 - [Iceberg 101 Course](https://www.dremio.com/subsurface/apache-iceberg-101-your-guide-to-learning-apache-iceberg-concepts-and-practices/)
