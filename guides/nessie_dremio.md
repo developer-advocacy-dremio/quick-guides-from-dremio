@@ -22,7 +22,7 @@ version: "3"
 services:
   # Nessie Catalog Server Using In-Memory Store
   catalog:
-    image: projectnessie/nessie:0.76.0
+    image: projectnessie/nessie:latest
     container_name: catalog
     networks:
       dremio-laptop-lakehouse:
@@ -30,7 +30,7 @@ services:
       - 19120:19120
   # Minio Storage Server
   storage:
-    image: minio/minio:RELEASE.2024-01-01T16-36-33Z
+    image: minio/minio:latest
     container_name: storage
     environment:
       - MINIO_ROOT_USER=admin
