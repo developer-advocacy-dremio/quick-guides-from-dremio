@@ -3,6 +3,12 @@ Quick Guides from Dremio on Several topics
 
 Want to learn more about Dremio? Here is a [great list of resources](./digests/getstarted.md).
 
+Just need to the docker command to try it out on your laptop?
+```
+docker run -p 9047:9047 -p 31010:31010 -p 45678:45678 -p 32010:32010 --name try-dremio dremio/dremio-oss
+```
+* Use the local lakehouse guide below to add a Nessie Catalog and Minio Object Storage to Local Setup
+
 ## Dremio
 - [Creating a Local Dremio/Nessie/Minio Lakehouse on your Laptop for Evaluation](./guides/nessie_dremio.md)
 - [Dremio Cloud SQL Function Examples](./guides/dremiocloudsql.md)
