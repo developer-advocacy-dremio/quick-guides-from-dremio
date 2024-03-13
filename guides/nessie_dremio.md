@@ -122,7 +122,7 @@ Set the authentication to “none”
 - Set root path to “/warehouse”
     Set the following connection properties:
     - `fs.s3a.path.style.access` to `true`
-    - `fs.s3a.endpoint` to `minio:9000`
+    - `fs.s3a.endpoint` to `storage:9000`
     - `dremio.s3.compat` to `true`
 - Uncheck “encrypt connection” (since our local Nessie instance is running on http)
 
