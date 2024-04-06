@@ -1,5 +1,12 @@
 ## Lakehouse On Your Laptop
 
+Some Blogs Covering Similar Exiercises:
+- [Postgres --> Iceberg/Dremio --> Superset Dashboard](https://www.dremio.com/blog/from-postgres-to-dashboards-with-dremio-and-apache-iceberg/)
+- [SQLServer --> Iceberg/Dremio --> Superset Dashboard](https://www.dremio.com/blog/from-sqlserver-to-dashboards-with-dremio-and-apache-iceberg/)
+- [MongoDB --> Iceberg/Dremio --> Superset Dashboard](https://www.dremio.com/blog/from-mongodb-to-dashboards-with-dremio-and-apache-iceberg/)
+- [AWS Glue --> Dremio --> Superset Dashboard](https://www.dremio.com/blog/bi-dashboards-with-apache-iceberg-using-aws-glue-and-apache-superset/)
+- [Running Graph QUeries on Iceberg Tables with Dremio & Puppygraph](https://www.dremio.com/blog/run-graph-queries-on-apache-iceberg-tables-with-dremio-puppygraph/)
+
 #### With Nessie/Minio/Dremio
 
 **Pre-Reqs:** Docker & Docker-Compose installed
