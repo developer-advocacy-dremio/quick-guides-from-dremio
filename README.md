@@ -11,6 +11,7 @@ docker run -p 9047:9047 -p 31010:31010 -p 45678:45678 -p 32010:32010 --name try-
 
 ## Dremio
 - [Creating a Local Dremio/Nessie/Minio Lakehouse on your Laptop for Evaluation](./guides/nessie_dremio.md)
+- [Repo of Docker-Compose Examples](https://github.com/developer-advocacy-dremio/dremio-compose)
 - [Dremio Cloud SQL Function Examples](./guides/dremiocloudsql.md)
 - [Dremio Cloud Data Quality and Validation Examples](./guides/dremiocloudquality.md)
 - [Dremio Arctic in Spark Notebook](./guides/arcticexercise.md)
@@ -27,11 +28,8 @@ docker run -p 9047:9047 -p 31010:31010 -p 45678:45678 -p 32010:32010 --name try-
 - [Iceberg & Dremio Example Queries](./guides/icebergdremio.md)
 - [Creating a Local Environment with Nessie, Spark, and Notebook](./guides/nessie-notebook.md)
 - [Creating a Local Spark/Notebook Environment](./guides/sparknotebook.md)
-
-
 - [Apache Iceberg Catalog Migration](./guides/catalogmigration.md)
 - [Spark Catalog Configuration Spark Scripts](./guides/bashscript.md)
-
 
 
 ## Apache Arrow
