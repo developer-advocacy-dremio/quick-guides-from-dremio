@@ -147,5 +147,4 @@ SELECT * FROM nessie.names;
 
 - Go explore you storage on minio, you should see all the Apache Iceberg data & metadata stored in your warehouse bucket.
 
-### Things to Be Aware Of
-- By default the Nessie images uses memory to store references, so if you shut down and restart the cluster Nessie will forget your tables. [Configure Nessie with a Data Store to Persist Nessie Metadata](https://projectnessie.org/try/configuration/#support-for-the-database-specific-implementations)
+[Repo of Different docker-compose.yml files for different Dremio environments](https://github.com/developer-advocacy-dremio/dremio-compose)
