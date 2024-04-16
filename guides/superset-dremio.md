@@ -15,7 +15,7 @@ then run
 docker exec -it superset superset init
 ```
 
-- then login at ` look -- navigate to http://localhost:8080/login/` with username `admin` and password `admin`
+- then login at `http://localhost:8080/login/` with username `admin` and password `admin`
 
 Use the dockerfile to rebuild this image with a custom secret key and admin account email.
 
