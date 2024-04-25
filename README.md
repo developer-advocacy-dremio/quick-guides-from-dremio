@@ -5,12 +5,7 @@ Want to learn more about Dremio? Here is a [great list of resources](./digests/g
 
 Just need to the docker command to try it out on your laptop?
 ```
-docker run -p 9047:9047 -p 31010:31010 -p 45678:45678 -p 32010:32010 --name try-dremio dremio/dremio-oss
-```
-
-To enable the reflections feature use
-```
-docker run -p 9047:9047 -p 31010:31010 -p 32010:32010 -p 45678:45678 -e DREMIO_JAVA_SERVER_EXTRA_OPTS=-Dpaths.dist=file:///opt/dremio/data/dist -e DREMIO_JAVA_EXTRA_OPTS=-Ddebug.addDefaultUser=true -e SERVER_GC_OPTS=-XX:+UseG1GC --name dremio_latest dremio/dremio-oss:latest
+docker run -p 9047:9047 -p 31010:31010 -p 45678:45678 -p 32010:32010 -e DREMIO_JAVA_SERVER_EXTRA_OPTS=-Dpaths.dist=file:///opt/dremio/data/dist --name try-dremio dremio/dremio-oss
 ```
 
 
