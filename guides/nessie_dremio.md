@@ -60,6 +60,8 @@ services:
       - 31010:31010
       - 32010:32010
     container_name: dremio
+    environment:
+      - DREMIO_JAVA_SERVER_EXTRA_OPTS=-Dpaths.dist=file:///opt/dremio/data/dist
     networks:
       dremio-laptop-lakehouse:
 networks:
