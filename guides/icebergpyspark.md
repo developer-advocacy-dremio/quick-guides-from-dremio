@@ -56,6 +56,50 @@ print("Spark Running")
 spark.sql("SELECT * FROM arctic.table1;").show()
 ```
 
+#### Polaris Catalog
+
+```py
+import pyspark
+from pyspark.sql import SparkSession
+import os
+
+## DEFINE SENSITIVE VARIABLES
+POLARIS_URI = 'http://localhost:8181/api/catalog'
+POLARIS_CATALOG_NAME = 'polariscatalog'
+POLARIS_CREDENTIALS = 'cf0c7cfe155d8f71:ee1037c68e4c5399a7ab50407e8bd7d5'
+POLARIS_SCOPE = 'PRINCIPAL_ROLE:ALL'
+
+
+
+conf = (
+    pyspark.SparkConf()
+        .setAppName('app_name')
+  		#packages
+        .set('spark.jars.packages', 'org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.5.2,org.apache.hadoop:hadoop-aws:3.4.0')
+  		#SQL Extensions
+        .set('spark.sql.extensions', 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions')
+  		#Configuring Catalog
+        .set('spark.sql.catalog.polaris', 'org.apache.iceberg.spark.SparkCatalog')
+        .set('spark.sql.catalog.polaris.warehouse', POLARIS_CATALOG_NAME)
+        .set('spark.sql.catalog.polaris.header.X-Iceberg-Access-Delegation', 'true')
+        .set('spark.sql.catalog.polaris.catalog-impl', 'org.apache.iceberg.rest.RESTCatalog')
+        .set('spark.sql.catalog.polaris.uri', POLARIS_URI)
+        .set('spark.sql.catalog.polaris.credential', POLARIS_CREDENTIALS)
+        .set('spark.sql.catalog.polaris.scope', POLARIS_SCOPE)
+        .set('spark.sql.catalog.polaris.token-refresh-enabled', 'true')
+)
+
+## Start Spark Session
+spark = SparkSession.builder.config(conf=conf).getOrCreate()
+print("Spark Running")
+
+## Run a Query
+spark.sql("CREATE TABLE polaris.names (name STRING) USING iceberg").show()
+spark.sql("INSERT INTO polaris.names VALUES ('Alex Merced'), ('Andrew Madson')").show()
+spark.sql("SELECT * FROM polaris.names").show()
+
+```
+
 #### AWS Glue
 
 ```py
