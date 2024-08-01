@@ -64,7 +64,7 @@ from pyspark.sql import SparkSession
 import os
 
 ## DEFINE SENSITIVE VARIABLES
-POLARIS_URI = 'http://localhost:8181/api/catalog'
+POLARIS_URI = 'http://polaris:8181/api/catalog'
 POLARIS_CATALOG_NAME = 'polariscatalog'
 POLARIS_CREDENTIALS = 'cf0c7cfe155d8f71:ee1037c68e4c5399a7ab50407e8bd7d5'
 POLARIS_SCOPE = 'PRINCIPAL_ROLE:ALL'
@@ -94,10 +94,10 @@ spark = SparkSession.builder.config(conf=conf).getOrCreate()
 print("Spark Running")
 
 ## Run a Query
-spark.sql("CREATE TABLE polaris.names (name STRING) USING iceberg").show()
-spark.sql("INSERT INTO polaris.names VALUES ('Alex Merced'), ('Andrew Madson')").show()
-spark.sql("SELECT * FROM polaris.names").show()
-
+spark.sql("CREATE NAMESPACE IF NOT EXISTS polaris.db").show()
+spark.sql("CREATE TABLE polaris.db.names (name STRING) USING iceberg").show()
+spark.sql("INSERT INTO polaris.db.names VALUES ('Alex Merced'), ('Andrew Madson')").show()
+spark.sql("SELECT * FROM polaris.db.names").show()
 ```
 
 #### AWS Glue
