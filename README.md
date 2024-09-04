@@ -10,6 +10,7 @@ docker run -p 9047:9047 -p 31010:31010 -p 45678:45678 -p 32010:32010 -e DREMIO_J
 
 
 * Use the local lakehouse guide below to add a Nessie Catalog and Minio Object Storage to Local Setup
+* If you want to deploy a single node instance to an Ubuntu Based VM, [Follow These Directions](https://www.dremio.com/blog/evaluating-dremio-deploying-a-single-node-instance-on-a-vm/)
 
 ## Dremio
 - [Creating a Local Dremio/Nessie/Minio Lakehouse on your Laptop for Evaluation](./guides/nessie_dremio.md)
