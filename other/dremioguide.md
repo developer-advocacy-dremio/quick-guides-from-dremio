@@ -36,8 +36,7 @@
 - [From Elasticsearch to Dashboards with Dremio and Apache Iceberg](https://www.dremio.com/blog/from-elasticsearch-to-dashboards-with-dremio-and-apache-iceberg/)
 - [From MySQL to Dashboards with Dremio and Apache Iceberg](https://www.dremio.com/blog/from-mysql-to-dashboards-with-dremio-and-apache-iceberg/)
 - [Ingesting Data into Nessie & Apache Iceberg with kafka-connect and querying it with Dremio](https://www.dremio.com/blog/ingesting-data-into-nessie-apache-iceberg-with-kafka-connect-and-querying-it-with-dremio/)
-- [From Apache Druid to Dashboards with Dremio and Apache Iceberg
-](https://www.dremio.com/blog/from-apache-druid-to-dashboards-with-dremio-and-apache-iceberg/)
+- [From Apache Druid to Dashboards with Dremio and Apache Iceberg](https://www.dremio.com/blog/from-apache-druid-to-dashboards-with-dremio-and-apache-iceberg/)
 - [From JSON, CSV and Parquet to Dashboards with Apache Iceberg and Dremio](https://www.dremio.com/blog/from-json-csv-and-parquet-to-dashboards-with-apache-iceberg-and-dremio/)
 - [Unifying Data Sources with Dremio to Power a Streamlit App](https://www.dremio.com/blog/unifying-data-sources-with-dremio-power-a-streamlit-app/)
 - [How to use Dremio’s Reflections to Reduce Your Snowflake Costs Within 60 minutes](https://www.dremio.com/blog/hands-on-exercise-using-dremios-reflections-to-optimize-your-snowflake-spend/)
@@ -60,11 +59,10 @@
 
 - [Apache Iceberg Crash Course: What is a Data Lakehouse and a Table Format?](https://www.dremio.com/blog/apache-iceberg-crash-course-what-is-a-data-lakehouse-and-a-table-format/)
 - [Dremio’s Commitment to being the Ideal Platform for Apache Iceberg Data Lakehouses](https://www.dremio.com/blog/dremios-commitment-to-being-the-ideal-platform-for-apache-iceberg-data-lakehouses/)
-- [Why Thinking about Apache Iceberg Catalogs Like Nessie and Apache Polaris (incubating) Matters
-](https://www.dremio.com/blog/why-thinking-about-apache-iceberg-catalogs-like-nessie-and-apache-polaris-incubating-matters/)
+- [Why Thinking about Apache Iceberg Catalogs Like Nessie and Apache Polaris (incubating) Matters](https://www.dremio.com/blog/why-thinking-about-apache-iceberg-catalogs-like-nessie-and-apache-polaris-incubating-matters/)
 - [8 Tools For Ingesting Data Into Apache Iceberg](https://www.dremio.com/blog/8-tools-for-ingesting-data-into-apache-iceberg/)
 - [Evolving the Data Lake: From CSV/JSON to Parquet to Apache Iceberg](https://www.dremio.com/blog/evolving-the-data-lake-from-csv-json-to-parquet-to-apache-iceberg/)
-- [Guide to Maintaining an Apache Iceberg Lakehouse]([https://www.dremio.com/blog/page/2/](https://www.dremio.com/blog/guide-to-maintaining-an-apache-iceberg-lakehouse/)
+- [Guide to Maintaining an Apache Iceberg Lakehouse](https://www.dremio.com/blog/guide-to-maintaining-an-apache-iceberg-lakehouse/)
 - [Migration Guide for Apache Iceberg Lakehouses](https://www.dremio.com/blog/migration-guide-for-apache-iceberg-lakehouses/)
 - [How Apache Iceberg is Built for Open Optimized Performance](https://www.dremio.com/blog/how-apache-iceberg-is-built-for-open-optimized-performance/)
 - [The Evolution of Apache Iceberg Catalogs](https://www.dremio.com/blog/the-evolution-of-apache-iceberg-catalogs/)
