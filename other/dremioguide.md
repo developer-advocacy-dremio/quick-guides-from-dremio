@@ -47,6 +47,7 @@
 
 ## Dremio Demos
 
+- [Hands-on with Dremio Demo Playlist](https://www.youtube.com/watch?v=7KQjmMJjBG4&list=PL-gIUf9e9CCsXhFyxT64soy039VLb5Wog&pp=iAQB)
 - [Dremio Demo - Federated Queries Joining Mongo and Postgres Data (Breaking Data Silos)](https://www.youtube.com/watch?v=4mJCdVHdEQc)
 - [Real-Time Analytics Across Data Sources Using Dremio](https://www.youtube.com/watch?v=qrkBj0UB360)
 - [End-to-End Data Engineering from CSV/JSON/Parquet to Apache Iceberg to Apache Superset Dashboard](https://www.youtube.com/watch?v=SoZS316jbWY)
