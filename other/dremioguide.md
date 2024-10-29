@@ -59,6 +59,7 @@
 ## What is Apache Iceberg
 
 - [Apache Iceberg Crash Course: What is a Data Lakehouse and a Table Format?](https://www.dremio.com/blog/apache-iceberg-crash-course-what-is-a-data-lakehouse-and-a-table-format/)
+- [Ultimate Directory of Apache Iceberg Resources](https://medium.com/data-engineering-with-dremio/ultimate-directory-of-apache-iceberg-resources-e3e02efac62e)
 - [Dremio’s Commitment to being the Ideal Platform for Apache Iceberg Data Lakehouses](https://www.dremio.com/blog/dremios-commitment-to-being-the-ideal-platform-for-apache-iceberg-data-lakehouses/)
 - [Why Thinking about Apache Iceberg Catalogs Like Nessie and Apache Polaris (incubating) Matters](https://www.dremio.com/blog/why-thinking-about-apache-iceberg-catalogs-like-nessie-and-apache-polaris-incubating-matters/)
 - [8 Tools For Ingesting Data Into Apache Iceberg](https://www.dremio.com/blog/8-tools-for-ingesting-data-into-apache-iceberg/)
