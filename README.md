@@ -19,7 +19,7 @@ docker run -p 9047:9047 -p 31010:31010 -p 45678:45678 -p 32010:32010 -e DREMIO_J
 - [Dremio Cloud Data Quality and Validation Examples](./guides/dremiocloudquality.md)
 - [Dremio Arctic in Spark Notebook](./guides/arcticexercise.md)
 - [Creating a Local Dremio/Spark/Minio Environment for Experimentation](./guides/icebergminiodremio.md)
-- [Configuring Dremio with dbt](./guides/dbt.md)
+- [Configuring Dremio with dbt](https://github.com/AlexMercedCoder/dbt-with-dremio-walkthrough-template)
 - [Trying Superset with Dremio Cloud from your Laptop](./guides/superset-dremio.md)
 - [Examples of Dremio for Machine Learning](./guides/dremio_ml.md)
 
