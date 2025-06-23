@@ -5,8 +5,8 @@
 - [Apache Polaris: The Definitive Guide](https://drmevn.fyi/linkpagepolaris)
 
 ## Hands-on Lakehouse Tutorials
-- [Intro to Dremio/Iceberg on your Lakehouse](https://drmevn.fyi/linkpagetut)
-- [Dremio University](https://drmevn.fyi/linkpageuni)
+- [Hands-on Intro to Iceberg on your Lakehouse](https://drmevn.fyi/linkpagetut)
+- [Dremio University (Earn Badges on Iceberg, MCP and more)](https://drmevn.fyi/linkpageuni)
 
 ## Meetup Groups/Luma Calendars for Lakehouse Events
 
