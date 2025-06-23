@@ -23,4 +23,4 @@
 - [NYC Data Lakehouse Events](https://lu.ma/NYCDataLakehouse)
 - [Orlando Data Events](https://lu.ma/Orlandodata)
 - [West Coast US Data Lakehouse Events (SF, Seattle, Denver, etc.)](https://lu.ma/westcoastlakehouse)
-- [East Coast US Data Lakehouse Events (NYC, Boston, Atlanta, Austin, etc.)][https://lu.ma/EastCoastLakehouse]
+- [East Coast US Data Lakehouse Events (NYC, Boston, Atlanta, Austin, etc.)](https://lu.ma/EastCoastLakehouse)
