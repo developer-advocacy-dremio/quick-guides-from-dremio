@@ -6,6 +6,7 @@
 
 ## Hands-on Lakehouse Tutorials
 - [Hands-on Intro to Iceberg on your Lakehouse](https://drmevn.fyi/linkpagetut)
+- [Hands-on with Dremio MCP Server](https://drmevn.fyi/mcp-dremio-laptop)
 - [Dremio University (Earn Badges on Iceberg, MCP and more)](https://drmevn.fyi/linkpageuni)
 
 ## Meetup Groups/Luma Calendars for Lakehouse Events
