@@ -7,6 +7,7 @@
 ## Hands-on Lakehouse Tutorials
 - [Hands-on Intro to Iceberg on your Lakehouse](https://drmevn.fyi/linkpagetut)
 - [Hands-on with Dremio MCP Server](https://drmevn.fyi/mcp-dremio-laptop)
+- [Dremio Enterprise Video Demo Tour](https://www.youtube.com/watch?v=FHFCifXUiSA)
 - [Dremio University (Earn Badges on Iceberg, MCP and more)](https://drmevn.fyi/linkpageuni)
 
 ## Meetup Groups/Luma Calendars for Lakehouse Events
@@ -25,3 +26,6 @@
 - [Orlando Data Events](https://lu.ma/Orlandodata)
 - [West Coast US Data Lakehouse Events (SF, Seattle, Denver, etc.)](https://lu.ma/westcoastlakehouse)
 - [East Coast US Data Lakehouse Events (NYC, Boston, Atlanta, Austin, etc.)](https://lu.ma/EastCoastLakehouse)
+
+## Other Resources
+- [My Slide Decks 2025 and Later](https://drive.google.com/drive/folders/1_Te8nKrHDr9b31AveWPjPTRTSTih8G-s?usp=drive_link)
