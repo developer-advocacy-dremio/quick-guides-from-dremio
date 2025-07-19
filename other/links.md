@@ -10,7 +10,7 @@
 - [Dremio Enterprise Video Demo Tour](https://www.youtube.com/watch?v=FHFCifXUiSA)
 - [Dremio University (Earn Badges on Iceberg, MCP and more)](https://drmevn.fyi/linkpageuni)
 
-## Meetup Groups/Luma Calendars for Lakehouse Events
+# Meetup Groups/Luma Calendars for Lakehouse Events
 
 #### International
 - [International Data Lakehouse Meetups](https://lu.ma/datalakehousemeetupsinternational)
@@ -27,5 +27,5 @@
 - [West Coast US Data Lakehouse Events (SF, Seattle, Denver, etc.)](https://lu.ma/westcoastlakehouse)
 - [East Coast US Data Lakehouse Events (NYC, Boston, Atlanta, Austin, etc.)](https://lu.ma/EastCoastLakehouse)
 
-## Other Resources
+# Other Resources
 - [My Slide Decks 2025 and Later](https://drive.google.com/drive/folders/1_Te8nKrHDr9b31AveWPjPTRTSTih8G-s?usp=drive_link)
