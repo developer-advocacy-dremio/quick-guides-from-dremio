@@ -1,8 +1,8 @@
 # Dremio Links
 
-## Free Books
-- [Apache Iceberg: The Definitive Guide](https://drmevn.fyi/linkpageiceberg)
-- [Apache Polaris: The Definitive Guide](https://drmevn.fyi/linkpagepolaris)
+## Books
+- [FREE - Apache Iceberg: The Definitive Guide](https://drmevn.fyi/linkpageiceberg)
+- [FREE - Apache Polaris: The Definitive Guide](https://drmevn.fyi/linkpagepolaris)
 - [Architecting an Apache Iceberg Lakehouse (50% off with code MLMerced)](https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse)
 
 ## Hands-on Lakehouse Tutorials
@@ -10,6 +10,11 @@
 - [Hands-on with Dremio MCP Server](https://drmevn.fyi/mcp-dremio-laptop)
 - [Dremio Enterprise Video Demo Tour](https://www.youtube.com/watch?v=FHFCifXUiSA)
 - [Dremio University (Earn Badges on Iceberg, MCP and more)](https://drmevn.fyi/linkpageuni)
+
+## Dremio Blogs and Events
+- [Dremio Events - Workshops and more!](https://drmevn.fyi/dremio-events)
+- [Dremio.com Blog](https://drmevn.fyi/dremio-blog)
+- [Dremio Medium Blog](https://medium.com/data-engineering-with-dremio)
 
 # Meetup Groups/Luma Calendars for Lakehouse Events
 
