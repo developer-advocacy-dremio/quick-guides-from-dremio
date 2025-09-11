@@ -3,7 +3,7 @@
 ## Books
 - [FREE - Apache Iceberg: The Definitive Guide](https://drmevn.fyi/linkpageiceberg)
 - [FREE - Apache Polaris: The Definitive Guide](https://drmevn.fyi/linkpagepolaris)
-- [Architecting an Apache Iceberg Lakehouse (50% off with code MLMerced)](https://www.manning.com/books/architecting-an-apache-iceberg-lakehouse)
+- [Architecting an Apache Iceberg Lakehouse](https://hubs.la/Q03GfY4f0)
 
 ## Hands-on Lakehouse Tutorials
 - [Hands-on Intro to Iceberg on your Lakehouse](https://drmevn.fyi/linkpagetut)
