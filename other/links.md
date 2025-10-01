@@ -3,6 +3,7 @@
 ## Books
 - [FREE - Apache Iceberg: The Definitive Guide](https://drmevn.fyi/linkpageiceberg)
 - [FREE - Apache Polaris: The Definitive Guide](https://drmevn.fyi/linkpagepolaris)
+- [FREE - The Apache Iceberg Digest: Vol 1](https://www.puppygraph.com/ebooks/apache-iceberg-digest-vol-1)
 - [Architecting an Apache Iceberg Lakehouse](https://hubs.la/Q03GfY4f0)
 
 ## Hands-on Lakehouse Tutorials
