@@ -35,4 +35,4 @@
 - [East Coast US Data Lakehouse Events (NYC, Boston, Atlanta, Austin, etc.)](https://lu.ma/EastCoastLakehouse)
 
 # Other Resources
-- [My Slide Decks 2025 and Later](https://drive.google.com/drive/folders/1_Te8nKrHDr9b31AveWPjPTRTSTih8G-s?usp=drive_link)
+- [My Slide Decks 2025 and Later](https://drive.google.com/drive/folders/16xtuqsY7L4qqxhizOyYoKSnR-nHlWZTf)
