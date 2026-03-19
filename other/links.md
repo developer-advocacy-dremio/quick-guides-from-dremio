@@ -2,6 +2,8 @@
 
 [Join the Dremio Dev Community Slack Channel](https://developer.dremio.com)
 
+[Raffle for Free Copy of "Architecting an Apache Iceberg Lakehouse"](https://docs.google.com/forms/u/0/d/e/1FAIpQLSc87eIYMSdCXZkbrIP1fo687ZxvNo-WFPSF_aUDfk3tYyzERw/viewform)
+
 - ## Books
 - [FREE - Apache Iceberg: The Definitive Guide](https://drmevn.fyi/linkpageiceberg)
 - [FREE - Apache Polaris: The Definitive Guide](https://drmevn.fyi/linkpagepolaris)
