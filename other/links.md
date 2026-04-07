@@ -1,15 +1,19 @@
 # Dremio Links
 
-[Join the Dremio Dev Community Slack Channel](https://developer.dremio.com)
-
-[Raffle for Free Copy of "Architecting an Apache Iceberg Lakehouse"](https://docs.google.com/forms/u/0/d/e/1FAIpQLSc87eIYMSdCXZkbrIP1fo687ZxvNo-WFPSF_aUDfk3tYyzERw/viewform)
+[Join the Dremio Dev Community Slack Channel](https://developer.dremio.com?utm_source=link_page&utm_medium=influencer&utm_campaign=iceberg&utm_term=qr-link-list-04-07-2026&utm_content=alexmerced)
 
 [Dremio Free 30 Day Trial (no CC, no infra, $400 free credits)](https://www.dremio.com/get-started/?utm_source=github-link-page&utm_medium=influencer&utm_campaign=iceberg&utm_term=github-link-page-03-20-2026&utm_content=alexmerced)
 
-- ## Books
+[How Dremio is the Iceberg Native Platform](https://www.dremio.com/platform/apache-iceberg/?utm_source=link_page&utm_medium=influencer&utm_campaign=iceberg&utm_term=qr-link-list-04-07-2026&utm_content=alexmerced)
+
+## FREE Books
 - [FREE - Apache Iceberg: The Definitive Guide](https://drmevn.fyi/linkpageiceberg)
 - [FREE - Apache Polaris: The Definitive Guide](https://drmevn.fyi/linkpagepolaris)
+- [FREE - Agentic AI for Dummies](https://hello.dremio.com/wp-resources-agentic-ai-for-dummies-reg.html?utm_source=link_page&utm_medium=influencer&utm_campaign=iceberg&utm_term=qr-link-list-04-07-2026&utm_content=alexmerced)
+- [FREE - Leverage Federation, The Semantic Layer and the Lakehouse for Agentic AI](https://hello.dremio.com/wp-resources-agentic-analytics-guide-reg.html?utm_source=link_page&utm_medium=influencer&utm_campaign=iceberg&utm_term=qr-link-list-04-07-2026&utm_content=alexmerced)
 - [FREE - The Apache Iceberg Digest: Vol1](https://www.puppygraph.com/ebooks/apache-iceberg-digest-vol-1)
+
+## Other Lakehouse Books
 - [Architecting an Apache Iceberg Lakehouse](https://hubs.la/Q03GfY4f0) (Discount Code: 3merced26)
 - [The 2026 Guide to Lakehouses, Apache Iceberg and Agentic AI: A Hands-On Practitioner's Guide to Modern Data Architecture, Open Table Formats, and Intelligent Analytics](https://www.amazon.com/Lakehouses-Apache-Iceberg-Agentic-Hands-ebook/dp/B0GQL4QNRT/ref=sr_1_13?crid=38N9JHI5YPXO6&dib=eyJ2IjoiMSJ9.MrNhOzgghEmdSejGTxdAjTBCedkUAIYo6K-D-qDHZje8lycycvZpEFOBEIDXWodpQjLj4do_-mGq-o3pr3j8LBmZaMN2q5x0iFgMBnmz34RK-0N-AiCiypuLaCj6vo-irJfHy-SoHuEY4Uai6JLTnUwMWdLSfmAdJgfojCPhbBkVnfQJo33W9azBiybNT3lG3nYXBg53umMSp2RzF7CNO4sPzmMcsALY982a8iDVvBs.9J9pX7mbOQImPR7LvaZ06LxPI26J-hH4x1j4FRo0GoA&dib_tag=se&keywords=alex+merced&qid=1772395857&sprefix=alex+merce%2Caps%2C155&sr=8-13)
 - [The Book on Using Apache Iceberg with Python](https://www.amazon.com/Book-Using-Apache-Iceberg-Python/dp/B0GNZ454FF/ref=sr_1_1?crid=38N9JHI5YPXO6&dib=eyJ2IjoiMSJ9.MrNhOzgghEmdSejGTxdAjTBCedkUAIYo6K-D-qDHZje8lycycvZpEFOBEIDXWodpQjLj4do_-mGq-o3pr3j8LBmZaMN2q5x0iFgMBnmz34RK-0N-AiCiypuLaCj6vo-irJfHy-SoHuEY4Uai6JLTnUwMWdLSfmAdJgfojCPhbBkVnfQJo33W9azBiybNT3lG3nYXBg53umMSp2RzF7CNO4sPzmMcsALY982a8iDVvBs.9J9pX7mbOQImPR7LvaZ06LxPI26J-hH4x1j4FRo0GoA&dib_tag=se&keywords=alex+merced&qid=1772395857&sprefix=alex+merce%2Caps%2C155&sr=8-1)
