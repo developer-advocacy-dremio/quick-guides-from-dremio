@@ -1,8 +1,10 @@
-# Dremio Links
+# Dremio Links (Free Books Below)
 
 [Join the Dremio Dev Community Slack Channel](https://developer.dremio.com?utm_source=link_page&utm_medium=influencer&utm_campaign=iceberg&utm_term=qr-link-list-04-07-2026&utm_content=alexmerced)
 
 [Dremio Free 30 Day Trial (no CC, no infra, $400 free credits)](https://www.dremio.com/get-started/?utm_source=github-link-page&utm_medium=influencer&utm_campaign=iceberg&utm_term=github-link-page-03-20-2026&utm_content=alexmerced)
+
+[Register for a Dremio Workshop](https://www.dremio.com/workshops/?utm_source=link_page&utm_medium=influencer&utm_campaign=iceberg&utm_term=qr-link-list-04-07-2026&utm_content=alexmerced)
 
 [How Dremio is the Iceberg Native Platform](https://www.dremio.com/platform/apache-iceberg/?utm_source=link_page&utm_medium=influencer&utm_campaign=iceberg&utm_term=qr-link-list-04-07-2026&utm_content=alexmerced)
 
